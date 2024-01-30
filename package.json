@@ -1,0 +1,12 @@
+{
+  "name": "pau-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm install"
+  },
+  "keywords": [],
+  "author": "jfelipeq14",
+  "license": "ISC"
+}
