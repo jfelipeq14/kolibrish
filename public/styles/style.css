@@ -1,4 +1,72 @@
-* {
-  margin: 0;
-  padding: 0;
+/* aqui solo se modifica lo que es el texto de la parte superior del formulario, el "SignIn"
+ alieandolo al centro, con un color de letra negro, con un tamaño de fuente de 45pixeles */
+.signin{
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 45px;
 }
+
+/* Aqui modifico el tamaño y la posicion del boton para abrir el formulario */
+.iniciar{
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+
+  position: absolute;
+  top: 3%;
+  left: 96.9%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Modifico el tamaño de la ventana donde aparecera el formulario */
+.pop-up{
+  border-radius: 10px;
+  width: 400px;
+}
+
+/* Aca modifico lo es el apartado donde se debe de ingresar el Email y el password */
+.input{
+  display: block;
+  width: 100%;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid #000;
+  margin: 1.5rem 0;
+  height: 40px;
+}
+
+
+/* Aqui se modifican los botones Login y cerra del formulario */
+.btn{
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: #222;
+  color: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+.btn-close{
+  background-color: red;
+  color:  #fff;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 6ex;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+
+}
+
+
