@@ -2,29 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pau Design</title>
-    <link
-      rel="stylesheet"
-      href="styles/style.css"
-    />
-    <script
-      src="./js/main.js"
-      type="module"
-    ></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="./js/main.js" type="module"></script>
   </head>
 
   <body>
     <nav>//Amor y paz</nav>
-    <!-- aqui empiezo -->
+
+    <!-- El formulario dentro del modal empieza aqui -->
     <main class="main">
-      <dialog
-        id="dialog3"
-        class="dialog"
-      >
+      <dialog id="dialog3" class="pop-up">
         <div
           class="modal fade"
           id="signinModal"
@@ -40,7 +29,7 @@
               </div>
               <div class="modal-body">
                 <form id="login-form">
-                  <label for="email">Email</label><br />
+                  <label for="email">Email: </label><br />
                   <input
                     type="email"
                     id="login-email"
@@ -49,10 +38,7 @@
                     required
                   />
                   <br />
-                  <label
-                    for="password"
-                    class="password"
-                    >Password:</label
+                  <label for="password" class="password">Password: </label
                   ><br />
                   <input
                     type="password"
@@ -67,42 +53,21 @@
                   <label for="checkbox">Remember me</label>
                   <br />
                   <br />
-                  <button
-                    type="submit"
-                    class="botones"
-                  >
-                    Login
-                  </button>
+                  <button type="submit" class="botones">Login</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
         <br />
-        <button
-          id="hide3"
-          class="botones"
-        >
-          Cerrar
-        </button>
+        <button id="hide3" class="botones">Cerrar</button>
       </dialog>
-      <button id="show3">Iniciar</button>
+      <button id="show3" class="iniciar">Iniciar</button>
     </main>
-    <!-- aqui termino -->
+    <!-- El formulario dentro del modal termina aqui -->
+
     <footer>Paciencia y jugueton 7w7</footer>
 
-    <script>
-      const dialog = document.getElementById("dialog3");
-      const showDialogButton = document.getElementById("show3");
-      const hideDialogButton = document.getElementById("hide3");
-
-      showDialogButton.addEventListener("click", () => {
-        dialog.showModal();
-      });
-
-      hideDialogButton.addEventListener("click", () => {
-        dialog.close();
-      });
-    </script>
+    <script src="./js/helper/showModal.js"></script>
   </body>
 </html>
