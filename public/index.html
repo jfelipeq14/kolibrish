@@ -5,15 +5,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pau Design</title>
-
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
   <nav>//Amor y paz</nav>
-  <main>Dibujos</main>
+  <!-- aqui empiezo -->
+  <main class="main">
+    <dialog id="dialog3" class="dialog">
+      <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalSignin"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="signin">SignIn</h3>
+            </div>
+            <div class="modal-body">
+              <form id="login-form">
+                <label for="email">Email</label><br>
+                <input type="email" id="login-email" class="form-control mb-3" placeholder="Email" required>
+                <br>
+                <label for="password" class="password">Password:</label><br>
+                <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required>
+                <br>
+                <br>
+                <input type="checkbox">
+                <label for="checkbox">Remember me</label>
+                <br>
+                <br>
+                <button type="submit" class="botones">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <button id="hide3" class="botones">Cerrar</button>
+    </dialog>
+    <button id="show3">Iniciar</button>
+  </main>
+  <!-- aqui termino -->
   <footer>Paciencia y jugueton 7w7</footer>
 
   <script src="./js/main.js" type="module"></script>
+  <script>
+    const dialog = document.getElementById('dialog3');
+    const showDialogButton = document.getElementById('show3');
+    const hideDialogButton = document.getElementById('hide3');
+
+    showDialogButton.addEventListener('click', () => {
+      dialog.showModal();
+    });
+
+    hideDialogButton.addEventListener('click', () => {
+      dialog.close();
+    });
+  </script>
 </body>
 
 </html>
