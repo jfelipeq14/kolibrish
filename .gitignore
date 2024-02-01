@@ -1,4 +1,6 @@
 #modules
-package-lock.json
 node_modules/
 public/json/
+
+#package
+package-lock.json
