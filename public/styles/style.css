@@ -7,18 +7,6 @@
   font-size: 45px;
 }
 
-/* Aqui modifico el tamaño y la posicion del boton para abrir el formulario */
-.iniciar{
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 16px;
-
-  position: absolute;
-  top: 3%;
-  left: 96.9%;
-  transform: translate(-50%, -50%);
-}
-
 
 /* Modifico el tamaño de la ventana donde aparecera el formulario */
 .pop-up{
@@ -65,8 +53,19 @@
   position: absolute;
   right: 8px;
   top: 8px;
-
-
 }
 
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
