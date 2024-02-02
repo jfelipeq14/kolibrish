@@ -31,7 +31,7 @@ body{
 .pop-up{
   border-radius: 10px;
   width: 400px;
-  border: 1px solid var(--purple50);
+  border: 3px solid var(--purple50);
   background-color: var(--purple400);
 }
 
@@ -44,10 +44,16 @@ body{
   height: 40px;
   background-color: transparent;
   width: 320px;
-
+  
 }
 
-
+::placeholder{
+  color: var(--purple700);
+  font-size: 1.2rem; ;
+}
+::backdrop{
+  background-color: rgba(0, 0, 0, .55);
+}
 /* Aqui se modifican los botones Login y cerra del formulario */
 .btn{
   width: 120px;
@@ -67,16 +73,18 @@ body{
   max-width: auto;
   width: 200px;
 }
+
 .btn-enter{
   margin: 0.5rem auto;
   display: block;
+  border: 2px solid var(--purple50);
 
 }
 
 .btn-close{
   background-color: var(--purple950);
-  color:  #fff;
-  border: none;
+  color: var(--purple50);
+  border: 2px solid var(--purple50);
   outline: none;
   font-size: 16px;
   border-radius: 6ex;
@@ -93,10 +101,8 @@ body{
   text-align: center;
   color: var(--purple950);
   font-size: 18px;
-  margin: 0 auto;
-  
+  margin: 0 auto; 
 }
-
 
 nav{
   display: flex;
