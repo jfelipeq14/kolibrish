@@ -10,6 +10,7 @@
   --purple800: #71369b;
   --purple900: #66327b;
   --purple950: #441e48;
+  --margin: 0.5rem 0;
 }
 
 body{
@@ -37,33 +38,39 @@ body{
 /* Aca modifico lo es el apartado donde se debe de ingresar el Email y el password */
 .input{
   display: block;
-  width: 100%;
-  outline: none;
   border: 0;
   border-bottom: 2px solid var(--purple50);
-  margin: 1.5rem 0;
+  margin: 2.5rem auto;
   height: 40px;
+  background-color: transparent;
+  width: 320px;
+
 }
 
 
 /* Aqui se modifican los botones Login y cerra del formulario */
 .btn{
-  width: 100%;
+  width: 120px;
   height: 40px;
-  border: none;
+  border: 1px solid var(--purple50);
   outline: none;
   font-size: 16px;
   background-color: var(--purple800);
   color: var(--purple50);
   border-radius: 10px;
   cursor: pointer;
-  margin: 0.5rem 0;
+  margin: var(--margin);
 }
 
 .btn-show{
   min-width: 100px;
   max-width: auto;
   width: 200px;
+}
+.btn-enter{
+  margin: 0.5rem auto;
+  display: block;
+
 }
 
 .btn-close{
@@ -80,6 +87,16 @@ body{
   right: 8px;
   top: 8px;
 }
+
+.password-remember{
+  text-decoration: none;
+  text-align: center;
+  color: var(--purple950);
+  font-size: 18px;
+  margin: 0 auto;
+  
+}
+
 
 nav{
   display: flex;
