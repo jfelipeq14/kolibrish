@@ -11,10 +11,21 @@
   --purple900: #66327b;
   --purple950: #441e48;
   --margin: 0.5rem 0;
+  --outline: 1px solid var(--purple50);
 }
 
 body {
   background-color: var(--purple50);
+}
+
+/* clases en general */
+.border-none{
+  border: none;
+}
+
+.border-bottom{
+  border: unset;
+  border-bottom: 2px solid var(--purple50);
 }
 
 /* aqui solo se modifica lo que es el texto de la parte superior del formulario, el "SignIn"
@@ -30,29 +41,40 @@ body {
 /* Modifico el tamaño de la ventana donde aparecera el formulario */
 .pop-up {
   border-radius: 10px;
-  width: 400px;
+  width: 350px;
   border: 1px solid var(--purple50);
   background-color: var(--purple400);
 }
 
 /* Aca modifico lo es el apartado donde se debe de ingresar el Email y el password */
-.input {
-  display: block;
-  border: 0;
-  border-bottom: 2px solid var(--purple50);
-  margin: 2.5rem auto;
-  height: 40px;
+.input{
   background-color: transparent;
+  color: var(--purple800);
+  display: block;
+  margin: 2.5rem auto;
+  padding: 0 12px;
+  height: 40px;
   width: 320px;
-
 }
 
+.input:hover{
+  outline: var(--outline);
+}
+
+.input:focus{
+  outline: var(--outline);
+  color: var(--purple50);
+}
+
+.input::placeholder{
+  color: var(--purple800);  
+}
 
 /* Aqui se modifican los botones Login y cerra del formulario */
 .btn {
   width: 120px;
   height: 40px;
-  border: 1px solid var(--purple50);
+  border: 2px solid var(--purple50);
   outline: none;
   font-size: 16px;
   background-color: var(--purple800);

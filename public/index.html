@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Pau Design</title>
+    <link
+      rel="stylesheet"
+      href="./styles/style.css"
+    />
+    <script
+      src="./js/main.js"
+      type="module"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pau Design</title>
-  <link rel="stylesheet" href="./styles/style.css" />
-  <script src="./js/main.js" type="module"></script>
-</head>
+  <body>
+    <nav>
+      <button
+        id="show3"
+        class="btn btn-show"
+      >
+        Ingresar
+      </button>
+      <button
+        type="button"
+        class="btn logged-out"
+        id="logout"
+      >
+        Logout
+      </button>
+    </nav>
 
-<body>
-  <nav>
-    <button id="show3" class="btn btn-show">Ingresar</button>
-  </nav>
+    <!-- El formulario dentro del modal empieza aqui -->
+    <main class="main">
+      <dialog
+        id="dialog3"
+        class="pop-up"
+      >
+        <button
+          id="hide3"
+          class="btn-close"
+        >
+          X
+        </button>
+        <h3 class="signin">Iniciar Sesión</h3>
+        <form id="login-form">
+          <label
+            ><input
+              type="email"
+              id="login-email"
+              class="input border-bottom"
+              placeholder="Email"
+              required
+          /></label>
 
-  <!-- El formulario dentro del modal empieza aqui -->
-  <main class="main">
-    <dialog id="dialog3" class="pop-up">
-      <button id="hide3" class="btn-close">X</button>
-      <h3 class="signin">Iniciar Sesión</h3>
-      <form id="login-form">
-        <label><input type="email" id="login-email" class="input" placeholder="Email" required /></label>
+          <label class="password"
+            ><input
+              type="password"
+              id="login-password"
+              class="input border-bottom"
+              placeholder="Password"
+              required
+          /></label>
+          <button
+            type="submit"
+            class="btn btn-enter"
+          >
+            Ingresar
+          </button>
+        </form>
+      </dialog>
+    </main>
+    <!-- El formulario dentro del modal termina aqui -->
 
-        <label class="password"><input type="password" id="login-password" class="input" placeholder="Password"
-            required /></label>
-        <p class="password-remember">¿Ha olvidado su contraseña?</p>
-        <button type="submit" class="btn btn-enter">Ingresar</button>
-      </form>
-    </dialog>
+    <footer>Paciencia y jugueton 7w7</footer>
 
-    <button type="button" class="btn logged-in " id="logout">Logout</button>
-
-  </main>
-  <!-- El formulario dentro del modal termina aqui -->
-
-  <footer>Paciencia y jugueton 7w7</footer>
-
-  <script src="./js/helper/showModal.js"></script>
-
-
-</body>
-
+    <script src="./js/helper/showModal.js"></script>
+  </body>
 </html>
