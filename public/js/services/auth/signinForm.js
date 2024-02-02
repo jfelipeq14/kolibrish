@@ -1,7 +1,7 @@
 // #region atributos
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
-import { showMessage } from '../../helper/showMessage.js'
+
 
 const signInForm = document.querySelector('#login-form')
 // #endregion
@@ -21,16 +21,15 @@ signInForm.addEventListener('submit', async (e) => {
       password
     )
     console.log(userCredentials)
-    // show welcome message
-    showMessage('Welcome' + userCredentials.user.email)
+
   } catch (error) {
     // error en caso de que losdatos esten incorrecto o el usuario no exista
     if (error.code === 'auth/wrong-password') {
-      showMessage('Wrong password', 'error')
+      console.log('Wrong password', 'error')
     } else if (error.code === 'auth/user-not-found') {
-      showMessage('User not found', 'error')
+      console.log('User not found', 'error')
     } else {
-      showMessage('Something went wrong', 'error')
+      console.log('Something went wrong', 'error')
     }
   }
 })

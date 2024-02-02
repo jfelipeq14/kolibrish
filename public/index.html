@@ -11,29 +11,33 @@
 
 <body>
   <nav>
-    <button id="show3" class="btn btn-show">Iniciar Sesión</button>
+    <button id="show3" class="btn btn-show">Ingresar</button>
   </nav>
 
   <!-- El formulario dentro del modal empieza aqui -->
   <main class="main">
     <dialog id="dialog3" class="pop-up">
       <button id="hide3" class="btn-close">X</button>
-      <h3 class="signin">SignIn</h3>
+      <h3 class="signin">Iniciar Sesión</h3>
       <form id="login-form">
         <label><input type="email" id="login-email" class="input" placeholder="Email" required /></label>
 
         <label class="password"><input type="password" id="login-password" class="input" placeholder="Password"
             required /></label>
-        <button type="submit" class="btn">Ingresar</button>
+        <p class="password-remember">¿Ha olvidado su contraseña?</p>
+        <button type="submit" class="btn btn-enter">Ingresar</button>
       </form>
     </dialog>
+
+    <button type="button" class="btn logged-in " id="logout">Logout</button>
+
   </main>
   <!-- El formulario dentro del modal termina aqui -->
 
   <footer>Paciencia y jugueton 7w7</footer>
 
   <script src="./js/helper/showModal.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 
 </body>
 

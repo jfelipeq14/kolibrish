@@ -15,16 +15,17 @@ import './services/crud/postList.js'
 
 // estado de autenticacion, validar el usuario y cargar datos de la base de datos
 onAuthStateChanged(auth, async (user) => {
+
   if (user) {
-    loginCheck(user)
+    loginCheck(user);
     try {
-      const querySnapshot = await getDocs(collection(db, 'posts'))
-      setupPosts(querySnapshot.docs)
-    } catch (e) {
-      console.error(e)
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      setupPosts(querySnapshot.docs);
+    } catch (error) {
+      console.log(error)
     }
   } else {
-    setupPosts([])
-    loginCheck(user)
+    setupPosts([]);
+    loginCheck(user);
   }
 })

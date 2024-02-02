@@ -1,5 +1,5 @@
 // #region Verificantion user if exist or no
-const loggedOutLinks = document.querySelectorAll('.logged-out') // selecciona todos las clases .logged-out
+const loggedOutLinks = document.querySelectorAll('.btn-enter') // selecciona todos las clases .logged-out
 const loggedInLinks = document.querySelectorAll('.logged-in') // selecciona todas las clases .logged-in
 // #endregion
 

@@ -1,4 +1,4 @@
-:root{
+:root {
   --purple50: #f1fefd;
   --purple100: #e3f9fd;
   --purple200: #cbecfb;
@@ -10,15 +10,16 @@
   --purple800: #71369b;
   --purple900: #66327b;
   --purple950: #441e48;
+  --margin: 0.5rem 0;
 }
 
-body{
+body {
   background-color: var(--purple50);
 }
 
 /* aqui solo se modifica lo que es el texto de la parte superior del formulario, el "SignIn"
  alieandolo al centro, con un color de letra negro, con un tamaño de fuente de 45pixeles */
-.signin{
+.signin {
   text-align: center;
   color: var(--purple950);
   margin: 10px 0px 20px;
@@ -27,7 +28,7 @@ body{
 
 
 /* Modifico el tamaño de la ventana donde aparecera el formulario */
-.pop-up{
+.pop-up {
   border-radius: 10px;
   width: 400px;
   border: 1px solid var(--purple50);
@@ -35,40 +36,47 @@ body{
 }
 
 /* Aca modifico lo es el apartado donde se debe de ingresar el Email y el password */
-.input{
+.input {
   display: block;
-  width: 100%;
-  outline: none;
   border: 0;
   border-bottom: 2px solid var(--purple50);
-  margin: 1.5rem 0;
+  margin: 2.5rem auto;
   height: 40px;
+  background-color: transparent;
+  width: 320px;
+
 }
 
 
 /* Aqui se modifican los botones Login y cerra del formulario */
-.btn{
-  width: 100%;
+.btn {
+  width: 120px;
   height: 40px;
-  border: none;
+  border: 1px solid var(--purple50);
   outline: none;
   font-size: 16px;
   background-color: var(--purple800);
   color: var(--purple50);
   border-radius: 10px;
   cursor: pointer;
-  margin: 0.5rem 0;
+  margin: var(--margin);
 }
 
-.btn-show{
+.btn-show {
   min-width: 100px;
   max-width: auto;
   width: 200px;
 }
 
-.btn-close{
+.btn-enter {
+  margin: 0.5rem auto;
+  display: block;
+
+}
+
+.btn-close {
   background-color: var(--purple950);
-  color:  #fff;
+  color: #fff;
   border: none;
   outline: none;
   font-size: 16px;
@@ -81,7 +89,17 @@ body{
   top: 8px;
 }
 
-nav{
+.password-remember {
+  text-decoration: none;
+  text-align: center;
+  color: var(--purple950);
+  font-size: 18px;
+  margin: 0 auto;
+
+}
+
+
+nav {
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
@@ -90,8 +108,21 @@ nav{
   width: 100%;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.logged-in {
+  position: fixed;
+  right: 1%;
+  width: 120px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 6.4px;
+
+
+
 }
