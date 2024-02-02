@@ -1,8 +1,26 @@
+:root{
+  --purple50: #f1fefd;
+  --purple100: #e3f9fd;
+  --purple200: #cbecfb;
+  --purple300: #accff6;
+  --purple400: #8aa1f0;
+  --purple500: #6e6ee7;
+  --purple600: #663fd9;
+  --purple700: #7941c3;
+  --purple800: #71369b;
+  --purple900: #66327b;
+  --purple950: #441e48;
+}
+
+body{
+  background-color: var(--purple50);
+}
+
 /* aqui solo se modifica lo que es el texto de la parte superior del formulario, el "SignIn"
  alieandolo al centro, con un color de letra negro, con un tamaño de fuente de 45pixeles */
 .signin{
   text-align: center;
-  color: #222;
+  color: var(--purple950);
   margin: 10px 0px 20px;
   font-size: 45px;
 }
@@ -12,6 +30,8 @@
 .pop-up{
   border-radius: 10px;
   width: 400px;
+  border: 1px solid var(--purple50);
+  background-color: var(--purple400);
 }
 
 /* Aca modifico lo es el apartado donde se debe de ingresar el Email y el password */
@@ -20,7 +40,7 @@
   width: 100%;
   outline: none;
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--purple50);
   margin: 1.5rem 0;
   height: 40px;
 }
@@ -33,15 +53,21 @@
   border: none;
   outline: none;
   font-size: 16px;
-  background-color: #222;
-  color: #f5f5f5;
+  background-color: var(--purple800);
+  color: var(--purple50);
   border-radius: 10px;
   cursor: pointer;
   margin: 0.5rem 0;
 }
 
+.btn-show{
+  min-width: 100px;
+  max-width: auto;
+  width: 200px;
+}
+
 .btn-close{
-  background-color: red;
+  background-color: var(--purple950);
   color:  #fff;
   border: none;
   outline: none;
