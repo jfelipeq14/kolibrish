@@ -21,7 +21,6 @@ signInForm.addEventListener('submit', async (e) => {
       password
     )
     console.log(userCredentials)
-
   } catch (error) {
     // error en caso de que losdatos esten incorrecto o el usuario no exista
     if (error.code === 'auth/wrong-password') {

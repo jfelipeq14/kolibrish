@@ -19,6 +19,14 @@ body {
   background-color: var(--purple50);
 }
 
+.d-none{
+  display: none;
+}
+
+.d-block{
+  display: block;
+}
+
 /* clases en general */
 .border-none {
   border: none;
