@@ -1,4 +1,4 @@
-:root{
+:root {
   --purple50: #f1fefd;
   --purple100: #e3f9fd;
   --purple200: #cbecfb;
@@ -14,7 +14,7 @@
   --outline: 1px solid var(--purple50);
 }
 
-body{
+body {
   background-color: var(--purple50);
 }
 
@@ -30,7 +30,7 @@ body{
 
 /* aqui solo se modifica lo que es el texto de la parte superior del formulario, el "SignIn"
  alieandolo al centro, con un color de letra negro, con un tamaño de fuente de 45pixeles */
-.signin{
+.signin {
   text-align: center;
   color: var(--purple950);
   margin: 10px 0px 20px;
@@ -39,7 +39,7 @@ body{
 
 
 /* Modifico el tamaño de la ventana donde aparecera el formulario */
-.pop-up{
+.pop-up {
   border-radius: 10px;
   width: 350px;
   border: 1px solid var(--purple50);
@@ -71,7 +71,7 @@ body{
 }
 
 /* Aqui se modifican los botones Login y cerra del formulario */
-.btn{
+.btn {
   width: 120px;
   height: 40px;
   border: 2px solid var(--purple50);
@@ -84,20 +84,21 @@ body{
   margin: var(--margin);
 }
 
-.btn-show{
+.btn-show {
   min-width: 100px;
   max-width: auto;
   width: 200px;
 }
-.btn-enter{
+
+.btn-enter {
   margin: 0.5rem auto;
   display: block;
 
 }
 
-.btn-close{
+.btn-close {
   background-color: var(--purple950);
-  color:  #fff;
+  color: #fff;
   border: none;
   outline: none;
   font-size: 16px;
@@ -110,17 +111,17 @@ body{
   top: 8px;
 }
 
-.password-remember{
+.password-remember {
   text-decoration: none;
   text-align: center;
   color: var(--purple950);
   font-size: 18px;
   margin: 0 auto;
-  
+
 }
 
 
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
@@ -129,8 +130,21 @@ nav{
   width: 100%;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.logged-in {
+  position: fixed;
+  right: 1%;
+  width: 120px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 6.4px;
+
+
+
 }
