@@ -16,14 +16,14 @@
     <!-- El formulario dentro del modal empieza aqui -->
     <main class="main">
       <dialog id="dialog3" class="pop-up">
-        <button id="hide3" class="btn-close"></button>
+        <button id="hide3" class="btn-close">X</button>
         <h3 class="signin">Iniciar Sesión</h3>
         <form id="login-form">
           <label
             ><input
               type="email"
               id="login-email"
-              class="input"
+              class="input border-bottom"
               placeholder="Email"
               required
           /></label>
@@ -32,11 +32,10 @@
             ><input
               type="password"
               id="login-password"
-              class="input"
+              class="input border-bottom"
               placeholder="Password"
               required
           /></label>
-          <p class="password-remember">¿Ha olvidado su contraseña?</p>
           <button type="submit" class="btn btn-enter">Ingresar</button>
         </form>
       </dialog>
