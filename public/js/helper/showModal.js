@@ -8,4 +8,4 @@ login.addEventListener('click', () => {
 
 hiddenPopup.addEventListener('click', () => {
   dialog.close()
-}) 
+})
