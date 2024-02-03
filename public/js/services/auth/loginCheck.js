@@ -1,6 +1,6 @@
 // #region Verificantion user if exist or no
-const loggedOutLinks = document.querySelectorAll('.btn-enter') // selecciona todos las clases .logged-out
-const loggedInLinks = document.querySelectorAll('.logged-in') // selecciona todas las clases .logged-in
+const btnLogout = document.getElementById('logout')
+const btnLogin = document.getElementById('login')
 // #endregion
 
 // #region funciones
@@ -8,11 +8,20 @@ export const loginCheck = (user) => {
   // si el usuario existe el signin se escondera y dejara el logout
   // de lo contrario el logout se ocultara y mostrara el signin
   if (user) {
-    loggedInLinks.forEach((link) => (link.style.display = 'block'))
-    loggedOutLinks.forEach((link) => (link.style.display = 'none'))
-  } else {
-    loggedInLinks.forEach((link) => (link.style.display = 'none'))
-    loggedOutLinks.forEach((link) => (link.style.display = 'block'))
+    btnLogin.classList.remove("d-block")
+    btnLogin.classList.add("d-none")
+    btnLogout.classList.remove("d-none")
+    btnLogout.classList.add("d-block")
+
+    dialog.close()
   }
+
+  btnLogout.addEventListener("click", () =>{
+    btnLogin.classList.remove("d-none")
+    btnLogin.classList.add("d-block")
+    btnLogout.classList.remove("d-block")
+    btnLogout.classList.add("d-none")
+  })
+
 }
 // #endregion

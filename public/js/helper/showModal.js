@@ -1,14 +1,11 @@
-const dialog = document.getElementById('dialog3')
-const showDialogButton = document.getElementById('show3')
-const hideDialogButton = document.getElementById('hide3')
-const signInForm = document.querySelector('#login-form')
+const dialog = document.getElementById('pop-up')
+const login = document.getElementById('login')
+const hiddenPopup = document.getElementById('hiddenPopup')
 
-showDialogButton.addEventListener('click', () => {
+login.addEventListener('click', () => {
   dialog.showModal()
 })
 
-hideDialogButton.addEventListener('click', () => {
+hiddenPopup.addEventListener('click', () => {
   dialog.close()
-  signInForm['login-email'].value = ''
-  signInForm['login-password'].value = ''
-})
+}) 
