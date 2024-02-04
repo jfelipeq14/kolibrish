@@ -13,6 +13,7 @@ import './services/auth/logout.js'
 // #endregion
 
 // #region pruebas
+import { setupColecciones } from './services/crud/coleccionesList.js'
 const array = [
   {
     id: 1234,
@@ -50,20 +51,20 @@ const array = [
     conjuntos: [
       {
         id: 5678,
-        nombre: 'Depor',
-        descripcion: 'Chimba pa correr',
+        nombre: 'Super',
+        descripcion: 'Melo',
         habilitado: true
       },
       {
         id: 6678,
-        nombre: 'Cas',
-        descripcion: 'Nada. no sé',
+        nombre: 'Casteo',
+        descripcion: 'A mimir',
         habilitado: true
       },
       {
         id: 6778,
-        nombre: 'Random',
-        descripcion: 'No, mejor no lo compre',
+        nombre: 'Nothing',
+        descripcion: 'No,sdfdsaf compre',
         habilitado: true
       }
     ]
@@ -76,12 +77,12 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     loginCheck(user)
     try {
-      setupColecciones(array)
+      setupColecciones([])
     } catch (error) {
       console.log(error)
     }
   } else {
-    setupColecciones([])
+    setupColecciones(array)
     loginCheck(user)
   }
 })
