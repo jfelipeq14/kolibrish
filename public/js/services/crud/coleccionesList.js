@@ -1,21 +1,47 @@
 // #region atributos
-const coleccionesList = document.querySelector('.colecciones')
-
+const coleccionesList = document.getElementById('coleccion')
+const conjuntosList = document.getElementById('conjuntos')
+const arrayConjuntos = []
+let validColeccion
 // #endregion
+
 // #region functions
 export const setupColecciones = (array) => {
   if (array.length) {
     let html = ''
     array.forEach((data) => {
-      const colecciones = data
-      const li = `
-        <h3 class="name-coleccion">${colecciones.nombre}</h3>
-    `
-      html += li
+      const option = `
+        <option value="${data.id}">${data.id} - ${data.nombre}</option>
+      `
+      arrayConjuntos.push({ id: data.id, conjuntos: data.conjuntos })
+      html += option
     })
-    coleccionesList.innerHTML = html
-  } else {
-    coleccionesList.innerHTML = '<h4 class="text-white">Login to See colecciones</h4>'
+    coleccionesList.innerHTML += html
   }
 }
+
+const searchById = (id, data) => {
+  if (id && data.length) {
+    return data.find((search) => search.id === id)
+  }
+}
+// #endregion
+
+// #region event
+coleccionesList.addEventListener('change', () => {
+  const id = coleccionesList.value
+  validColeccion = searchById(parseInt(id), arrayConjuntos)
+  if (validColeccion) {
+    const conjuntosHTML = validColeccion.conjuntos.map((conjunto) => {
+      return `
+        <article class="card">
+          <header>${conjunto.nombre}</header>
+          <p>${conjunto.habilitado}</p>
+          <footer>${conjunto.descripcion}</footer>
+        </article>
+        `
+    })
+    conjuntosList.innerHTML = conjuntosHTML
+  }
+})
 // #endregion
