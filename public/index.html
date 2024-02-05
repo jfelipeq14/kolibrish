@@ -29,7 +29,7 @@
 
   <body>
     <nav>
-      <h1>Catálogo moda</h1>
+      <h3>Catálogo moda</h3>
       <button
         class="btn btn-show d-none"
         id="logout"
@@ -57,7 +57,7 @@
         >
           x
         </button>
-        <h3 class="signin">Iniciar Sesión</h3>
+        <h3 class="title">Iniciar Sesión</h3>
         <form id="login-form">
           <label
             ><input
@@ -86,7 +86,7 @@
       </dialog>
       <form class="colecciones">
       <label>
-        <select id="coleccion">
+        <select class="input" id="coleccion">
           <option selected>Seleccione una coleccion</option>
         </select>
       </label>
@@ -97,38 +97,36 @@
     <!-- El formulario dentro del modal termina aqui -->
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
+        <section class="footer-row">
           <!-- <img class="img" /> -->
-          <div class="footer-links">
+          <article class="footer-links">
             <h4>Contacto</h4>
             <ul>
               <li><a href="#">Numero de prueba</a></li>
             </ul>
-          </div>
-          <div class="footer-links">
+          </article>
+          <article class="footer-links">
             <h4>Legal</h4>
             <ul>
               <li><a href="#">Política de privacidad </a></li>
               <li><a href="#">Términos y condiciones </a></li>
             </ul>
-          </div>
-          <div class="footer-links">
+          </article>
+          <article class="footer-links">
             <h4>Soporte</h4>
             <ul>
               <li><a href="#">Correo:Hermes@gmail.com</a></li>
             </ul>
-          </div>
-          <div class="footer-links redes">
+          </article>
+          <article class="footer-links redes">
             <div class="social-link">
               <a href="#"><i class="fa-brands fa-facebook"></i></a>
               <a href="#"><i class="fa-brands fa-instagram"></i> </a>
               <a href="#"><i class="fa-brands fa-whatsapp"></i> </a>
               <a href="#"><i class="fa-brands fa-square-x-twitter"></i> </a>
             </div>
-          </div>
-        </div>
-      </div>
+          </article>
+        </section>
     </footer>
 
     <script src="./js/helper/showModal.js"></script>

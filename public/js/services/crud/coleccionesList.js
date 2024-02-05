@@ -11,7 +11,7 @@ export const setupColecciones = (array) => {
     let html = ''
     array.forEach((data) => {
       const option = `
-        <option value="${data.id}">${data.id} - ${data.nombre}</option>
+        <option value="${data.id}">${data.nombre}</option>
       `
       arrayConjuntos.push({ id: data.id, conjuntos: data.conjuntos })
       html += option
@@ -31,8 +31,9 @@ const searchById = (id, data) => {
 coleccionesList.addEventListener('change', () => {
   const id = coleccionesList.value
   validColeccion = searchById(parseInt(id), arrayConjuntos)
+  console.log(validColeccion)
   if (validColeccion) {
-    const conjuntosHTML = validColeccion.conjuntos.map((conjunto) => {
+    conjuntosList.innerHTML = validColeccion.conjuntos.map((conjunto) => {
       return `
         <article class="card">
           <header>${conjunto.nombre}</header>
@@ -41,7 +42,6 @@ coleccionesList.addEventListener('change', () => {
         </article>
         `
     })
-    conjuntosList.innerHTML = conjuntosHTML
   }
 })
 // #endregion
