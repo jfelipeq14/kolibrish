@@ -2,6 +2,8 @@
 const dialog = document.getElementById('pop-up')
 const btnLogout = document.getElementById('logout')
 const btnLogin = document.getElementById('login')
+
+import '../crud/setData.js'
 // #endregion
 
 // #region funciones

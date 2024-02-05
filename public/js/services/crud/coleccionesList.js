@@ -1,3 +1,5 @@
+import { getData } from './getData.js'
+
 // #region atributos
 const coleccionesList = document.getElementById('coleccion')
 const conjuntosList = document.getElementById('conjuntos')
@@ -6,7 +8,8 @@ let validColeccion
 // #endregion
 
 // #region functions
-export const setupColecciones = (array) => {
+export const setupColecciones = async (string) => {
+  const array = await getData(string)
   if (array.length) {
     let html = ''
     array.forEach((data) => {
