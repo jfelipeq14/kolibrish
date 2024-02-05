@@ -34,9 +34,10 @@ const searchById = (id, data) => {
 coleccionesList.addEventListener('change', () => {
   const id = coleccionesList.value
   validColeccion = searchById(parseInt(id), arrayConjuntos)
-  console.log(validColeccion)
   if (validColeccion) {
+    console.log(arrayConjuntos)
     conjuntosList.innerHTML = validColeccion.conjuntos.map((conjunto) => {
+      // console.log(conjunto.nombre)
       return `
         <article class="card">
           <header>${conjunto.nombre}</header>

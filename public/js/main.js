@@ -4,10 +4,9 @@ import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/fi
 //   getDocs,
 //   collection
 // } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
-import { auth, db } from './config/firebase.js' // configuracion de firebase
+import { auth } from './config/firebase.js' // configuracion de firebase
 import { loginCheck } from './services/auth/loginCheck.js' // funcion para validar el login
 import { setupColecciones } from './services/crud/coleccionesList.js'
-import { getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
 
 // import { getData } from './services/crud/getData.js'
 
@@ -15,7 +14,6 @@ import { getDocs, collection } from "https://www.gstatic.com/firebasejs/9.10.0/f
 import './services/auth/signinForm.js'
 import './services/auth/logout.js'
 // #endregion
-
 
 // #region pruebas
 // #endregion
@@ -25,12 +23,12 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     loginCheck(user)
     try {
-      console.log("Goleador");
+      console.log('Goleador')
     } catch (error) {
       console.log(error)
     }
   } else {
-    setupColecciones("colecciones")
+    setupColecciones('colecciones')
     loginCheck(user)
   }
 })
