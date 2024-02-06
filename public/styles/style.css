@@ -1,20 +1,31 @@
 :root {
-  --purple50: #f1fefd;
-  --purple100: #e3f9fd;
-  --purple200: #cbecfb;
-  --purple300: #accff6;
-  --purple400: #8aa1f0;
-  --purple500: #6e6ee7;
-  --purple600: #663fd9;
-  --purple700: #7941c3;
-  --purple800: #71369b;
-  --purple900: #66327b;
-  --purple950: #441e48;
+  --blue-50: #ecfef4;
+  --blue-100: #d0fbec;
+  --blue-200: #abf7ec;
+  --blue-300: #70ecf0;
+  --blue-400: #28b9e2;
+  --blue-500: #1380c9;
+  --blue-600: #114da6;
+  --blue-700: #162f88;
+  --blue-800: #1b1c6f;
+  --blue-900: #281c5f;
+  --blue-950: #1f0c40;
+  --purple-50: #f7fcfd;
+  --purple-100: #ebf6fa;
+  --purple-200: #dfedf6;
+  --purple-300: #c4d5ee;
+  --purple-400: #9dade2;
+  --purple-500: #787dd3;
+  --purple-600: #695bc2;
+  --purple-700: #6648a8;
+  --purple-800: #6b4294;
+  --purple-900: #5c3370;
+  --purple-950: #481b50;
   --black-bg: #00000082;
   --margin: 0.5rem 0;
-  --outline: 1px solid var(--purple50);
+  --outline: 1px solid var(--purple-50);
   --radius: 5.5ex;
-  --border-btn: 2px solid var(--purple50);
+  --border-btn: 2px solid var(--purple-50);
 }
 
 * {
@@ -25,7 +36,7 @@
 }
 
 body {
-  background-color: var(--purple50);
+  background-color: var(--purple-50);
   font-family: sans-serif;
   text-transform: capitalize;
   width: 100vw;
@@ -41,13 +52,13 @@ h5,
 h6 {
   font-weight: bold;
   font-size: 2rem;
-  color: var(--purple50);
+  color: var(--purple-50);
   padding: 12px;
 }
 
 .title {
   text-align: center;
-  color: var(--purple950);
+  color: var(--purple-950);
   font-size: 45px;
   margin: 0 auto;
   padding: 30px 0;
@@ -63,22 +74,20 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--purple500);
+  background-color: var(--purple-500);
 }
 
 button {
   all: unset;
   cursor: pointer;
-  position: relative;
-  display: inline-block;
   text-align: center;
   border-radius: var(--radius);
-  color: var(--purple700);
+  color: var(--purple-700);
 }
 
 button:hover {
   color: white;
-  background-color: var(--purple500);
+  background-color: var(--purple-500);
 }
 
 .btn {
@@ -87,10 +96,10 @@ button:hover {
   height: 40px;
   font-size: 16px;
   margin: 10px 15px;
-  color: var(--purple50);
+  color: var(--purple-50);
   outline: var(--outline);
   border-radius: var(--radius);
-  background-color: var(--purple800);
+  background-color: var(--purple-800);
 }
 
 .btn-show {
@@ -102,21 +111,21 @@ button:hover {
 .btn-enter {
   margin: 0 auto;
   display: block;
-  border: 2px solid var(--purple50);
+  border: 2px solid var(--purple-50);
 }
 
 .btn-close {
   cursor: pointer;
   position: absolute;
-  font-size: 16px;
-  right: 10px;
   top: 10px;
+  right: 10px;
   width: 28px;
   height: 28px;
+  font-size: 16px;
   border: var(--border-btn);
   border-radius: var(--radius);
-  color: var(--purple50);
-  background-color: var(--purple950);
+  color: var(--purple-50);
+  background-color: var(--purple-950);
 }
 
 .footer {
@@ -146,13 +155,13 @@ button:hover {
   margin: 0 auto;
   font-size: 1.5rem;
   text-align: center;
-  color: mediumorchid;
+  color: var(--purple-700);
 }
 
 .footer-links ul li a {
   font-size: 18px;
   text-decoration: none;
-  color: black;
+  color: var(--black-bg);
   display: block;
   margin-bottom: 10px;
   transition: all 0.3s ease;
@@ -164,24 +173,24 @@ button:hover {
 }
 
 .footer-links ul li a :hover {
-  color: mediumorchid;
+  color: var(--purple-700);
 }
 
 .social-link a {
   display: inline-block;
   min-height: 40px;
   width: 40px;
-  background-color: gray;
+  background-color: var(--blue-200);
   margin: 2rem auto;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: beige;
+  color: var(--blue-50);
   transition: all 0.5 ease;
 }
 
 .social-link a:hover {
-  background-color: mediumorchid;
+  background-color: var(--purple-700);
 }
 
 .redes {
@@ -206,7 +215,7 @@ button:hover {
 
 .border-bottom {
   border: unset;
-  border-bottom: 2px solid var(--purple50);
+  border-bottom: 2px solid var(--purple-50);
 }
 
 .colecciones {
@@ -226,7 +235,7 @@ button:hover {
 .card {
   width: 18rem;
   height: 12rem;
-  border: 1px solid var(--purple950);
+  border: 1px solid var(--purple-950);
   padding: 20px;
   border-radius: var(--radius);
   margin: 0 auto;
@@ -235,7 +244,7 @@ button:hover {
 .card header {
   font-size: large;
   font-weight: bold;
-  color: var(--purple700);
+  color: var(--purple-700);
 }
 .card p {
   border: var(--border-btn);
@@ -251,7 +260,7 @@ button:hover {
   width: 400px;
   height: 400px;
   border: var(--border-btn);
-  background-color: var(--purple400);
+  background-color: var(--purple-400);
 }
 
 .pop-up::backdrop {
@@ -260,7 +269,7 @@ button:hover {
 
 .input {
   background-color: transparent;
-  color: var(--purple800);
+  color: var(--purple-800);
   font-size: 1.2rem;
   display: block;
   margin: 2.5rem auto;
@@ -278,7 +287,7 @@ button:hover {
 }
 
 .input::placeholder {
-  color: var(--purple700);
+  color: var(--purple-700);
 }
 
 @media (max-width: 991px) {
