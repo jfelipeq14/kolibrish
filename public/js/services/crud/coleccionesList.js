@@ -40,9 +40,9 @@ coleccionesList.addEventListener('change', () => {
       // console.log(conjunto.nombre)
       return `
         <article class="card">
-          <header>${conjunto.nombre}</header>
+          <h3 class="title">${conjunto.nombre}</h3>
           <p>${conjunto.habilitado}</p>
-          <footer>${conjunto.descripcion}</footer>
+          <span>${conjunto.descripcion}</span>
         </article>
         `
     })
