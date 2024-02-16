@@ -1,56 +1,51 @@
 [
     {
         "id": 1234,
-        "nombre": "feb-1",
-        "fecha-creacion": "2024-02-01",
-        "fecha-modificacion": "2024-02-04",
-        "fecha-finalizacion": "2025-02-04",
-        "conjuntos":[
+        "nombre": "Faldas",
+        "productos":[
             {
                 "id": 5678,
-                "nombre": "Depor",
-                "descripcion": "Chimba pa correr",
+                "nombre": "Falda Xd",
+                "descripcion": "Cool, men",
                 "habilitado": true
             },
             {
                 "id": 6678,
-                "nombre": "Cas",
-                "descripcion": "Nada. no sé",
+                "nombre": "Falda Yz",
+                "descripcion": "Sin bolsillos",
                 "habilitado": true
             },
             {
                 "id": 6778,
-                "nombre": "Random",
-                "descripcion": "No, mejor no lo compre",
+                "nombre": "Faldita",
+                "descripcion": "Tiene bolsillos tambien",
                 "habilitado": true
             }
         ]
     },
     {
-        "id": 9876,
-        "nombre": "feb-2",
-        "fecha-creacion": "2024-02-01",
-        "fecha-modificacion": "2024-02-04",
-        "fecha-finalizacion": "2025-02-04",
-        "conjuntos":[
+        "id": 1234,
+        "nombre": "Pantalones",
+        "productos":[
             {
                 "id": 5678,
-                "nombre": "Depor",
-                "descripcion": "Chimba pa correr",
+                "nombre": "Pantalon Sin bolsillos",
+                "descripcion": "Es full pa' caminar",
                 "habilitado": true
             },
             {
                 "id": 6678,
-                "nombre": "Cas",
-                "descripcion": "Nada. no sé",
+                "nombre": "Pantalon con bolsillos",
+                "descripcion": "Nada que decir",
                 "habilitado": true
             },
             {
                 "id": 6778,
-                "nombre": "Random",
+                "nombre": "Pantalon sin mucho",
                 "descripcion": "No, mejor no lo compre",
                 "habilitado": true
             }
         ]
     }
+    
 ]

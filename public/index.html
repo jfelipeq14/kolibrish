@@ -2,60 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pau Design</title>
-    <link
-      rel="stylesheet"
-      href="./styles/style.css"
-    />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script
       src="
     https://kit.fontawesome.com/273d0fbdfa.js
     "
       crossorigin="anonymous"
     ></script>
-    
   </head>
 
   <body>
     <nav>
       <h3 class="title">Catálogo moda</h3>
-      <button
-        class="d-none"
-        id="logout"
-      >
-        Logout
-      </button>
+      <button class="d-none btn-md" id="logout">Logout</button>
 
-      <button
-        class="d-block"
-        id="login"
-      >
-        INGRESAR
-      </button>
+      <button class="d-block btn-md" id="login">INGRESAR</button>
     </nav>
 
     <!-- El formulario dentro del modal empieza aqui -->
     <main class="container">
-      <dialog
-        id="pop-up"
-      >
-        <button
-          id="hiddenPopup"
-          class="close"
-        >
-          x
-        </button>
+      <dialog id="pop-up">
+        <button id="hiddenPopup" class="btn-xs">X</button>
         <h3>Iniciar sesión</h3>
         <form id="login-form">
           <label
             ><input
               type="email"
               id="login-email"
-              class="input border-bottom"
+              class="input"
               placeholder="Email"
               required
           /></label>
@@ -64,16 +40,11 @@
             ><input
               type="password"
               id="login-password"
-              class="input border-bottom"
+              class="input"
               placeholder="Password"
               required
           /></label>
-          <button
-            type="submit"
-            class="btn btn-enter"
-          >
-            Ingresar
-          </button>
+          <button type="submit" class="btn btn-md">Ingresar</button>
         </form>
       </dialog>
       <section id="main"></section>
@@ -85,42 +56,10 @@
     <!-- El formulario dentro del modal termina aqui -->
 
     <footer>
-        <section class="footer-row">
-          <!-- <img class="img" /> -->
-          <article class="footer-links">
-            <h4>Contacto</h4>
-            <ul>
-              <li><a href="#">Numero de prueba</a></li>
-            </ul>
-          </article>
-          <article class="footer-links">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="#">Política de privacidad </a></li>
-              <li><a href="#">Términos y condiciones </a></li>
-            </ul>
-          </article>
-          <article class="footer-links">
-            <h4>Soporte</h4>
-            <ul>
-              <li><a href="#">Correo:Hermes@gmail.com</a></li>
-            </ul>
-          </article>
-          <article class="footer-links redes">
-            <div class="social-link">
-              <a href="#"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i> </a>
-              <a href="#"><i class="fa-brands fa-whatsapp"></i> </a>
-              <a href="#"><i class="fa-brands fa-square-x-twitter"></i> </a>
-            </div>
-          </article>
-        </section>
+      <p>Toro encargado</p>
     </footer>
 
     <script src="./js/helper/showModal.js"></script>
-    <script
-      src="./js/main.js"
-      type="module"
-    ></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
