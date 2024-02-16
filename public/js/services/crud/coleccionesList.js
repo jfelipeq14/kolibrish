@@ -1,9 +1,9 @@
 import { getData } from './getData.js'
 
 // #region atributos
-const coleccionesList = document.getElementById('coleccion')
-const conjuntosList = document.getElementById('conjuntos')
-const arrayConjuntos = []
+const categoriasList = document.getElementById('categorias')
+const productosList = document.getElementById('productos')
+const listProductos = []
 let validColeccion
 // #endregion
 
@@ -14,12 +14,12 @@ export const setupColecciones = async (string) => {
     let html = ''
     array.forEach((data) => {
       const option = `
-        <option value="${data.id}">${data.nombre}</option>
+        <button id="${data.id}" class="btn-categoria">${data.nombre}</button>
       `
-      arrayConjuntos.push({ id: data.id, conjuntos: data.conjuntos })
+      listProductos.push({ id: data.id, conjuntos: data.conjuntos })
       html += option
     })
-    coleccionesList.innerHTML += html
+    categoriasList.innerHTML += html
   }
 }
 
@@ -31,19 +31,19 @@ const searchById = (id, data) => {
 // #endregion
 
 // #region event
-coleccionesList.addEventListener('change', () => {
-  const id = coleccionesList.value
-  validColeccion = searchById(parseInt(id), arrayConjuntos)
+categoriasList.addEventListener('change', () => {
+  const id = categoriasList.value
+  validColeccion = searchById(parseInt(id), listProductos)
   if (validColeccion) {
-    console.log(arrayConjuntos)
-    conjuntosList.innerHTML = validColeccion.conjuntos.map((conjunto) => {
+    console.log(listProductos)
+    productosList.innerHTML = validColeccion.conjuntos.map((conjunto) => {
       // console.log(conjunto.nombre)
       return `
-        <article class="card">
+        <div class="card">
           <h3 class="title">${conjunto.nombre}</h3>
           <p>${conjunto.habilitado}</p>
           <span>${conjunto.descripcion}</span>
-        </article>
+        </div>
         `
     })
   }
