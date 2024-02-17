@@ -11,15 +11,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: #24bae4 #364797;
+  box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 body {
   text-align: center;
   font-family: sans-serif;
-  text-transform: capitalize;
+  text-transform: uppercase;
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 
@@ -35,16 +35,16 @@ h6 {
 }
 
 nav {
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 
 section {
-  width: 100vw;
-  height: 100vh;
   display: flex;
+  max-width: 100vw;
+  max-height: 100vh;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -52,11 +52,10 @@ section {
 
 dialog {
   width: 400px;
-  padding: 15px 0;
   margin: auto auto;
   color: var(--purple);
-  background-color: #ffffff;
   box-shadow: var(--shadow);
+  background-color: #ffffff;
   border-radius: var(--radius);
   -o-border-radius: var(--radius);
   -ms-border-radius: var(--radius);
@@ -65,27 +64,42 @@ dialog {
   -webkit-border-radius: var(--radius);
 }
 
+dialog h3 {
+  margin: 30px auto;
+}
+
 dialog::backdrop {
   backdrop-filter: blur(8px);
   background-color: #00000082;
 }
 
 input,
-select {
+select,
+textarea {
+  width: 310px;
   height: 40px;
   color: black;
-  display: block;
+  display: inline;
   padding: 0 12px;
-  margin: 0.8rem auto;
+  margin: 0 0 0 50px;
   border: var(--border);
   background: transparent;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 
-input::placeholder {
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
   color: #00000082;
 }
 
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border: none;
   outline: 1px solid var(--blue);
 }
@@ -118,15 +132,6 @@ button:focus {
   color: var(--purple);
 }
 
-footer {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
 /* class */
 .d-none {
   display: none;
@@ -138,13 +143,23 @@ footer {
 
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
+.d-grid {
+  display: grid;
+}
+
+.buttons {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
 .btn-xs {
   top: 2px;
   right: 2px;
-  width: 45px;
-  height: 45px;
+  width: 34px;
+  height: 34px;
   outline: none;
   cursor: pointer;
   position: absolute;
@@ -198,6 +213,7 @@ footer {
 }
 
 /* footer */
+
 footer {
   width: 100vw;
   height: 100vh;
@@ -209,13 +225,11 @@ footer article {
   width: 50vw;
   display: grid;
   text-align: start;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 footer article h3 {
   margin: 30px auto;
-  text-align: center;
 }
 
 footer article div h4 {
@@ -224,14 +238,83 @@ footer article div h4 {
   color: var(--blue);
 }
 
-footer article div ul {
+footer article div ul,
+footer article div ul li a {
   color: white;
   font-size: large;
-  text-decoration: none;
 }
 
 footer article a {
-  margin: 30px auto;
+  margin: 30px 0;
   color: var(--blue);
   text-decoration: none;
+}
+
+/* pantalla de productos */
+/* body {
+  background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
+} */
+
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+fieldset legend {
+  width: 100%;
+  margin: 30px 0;
+  text-align: start;
+  font-size: x-large;
+  color: var(--purple);
+  border-bottom: 2px solid var(--purple);
+}
+
+label {
+  display: grid;
+  margin: 10px 0;
+  align-items: center;
+  justify-items: start;
+  grid-template-columns: 80px 1fr;
+}
+
+input[type="file"] {
+  margin: auto 30px;
+  max-width: 145px;
+  height: 190px;
+}
+label img {
+  position: static;
+  max-width: 100px;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  width: 116px;
+  height: 34px;
+  display: flex;
+  color: white;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background-color: var(--blue);
+  -o-border-radius: var(--radius);
+  -ms-border-radius: var(--radius);
+  -moz-border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+}
+
+.grid {
+  gap: 50px;
+  display: grid;
+  margin: 30px;
+  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+table {
+  border: 1px solid var(--purple);
+}
+
+thead {
+  background-color: var(--blue);
 }

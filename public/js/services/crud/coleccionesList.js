@@ -14,7 +14,7 @@ export const setupColecciones = async (string) => {
     let html = ''
     array.forEach((data) => {
       const option = `
-        <button id="${data.id}" class="btn-md">${data.nombre}</button>
+        <button id="${data.id}" class="btn-sm">${data.nombre}</button>
       `
       listProductos.push({ id: data.id, conjuntos: data.conjuntos })
       html += option
