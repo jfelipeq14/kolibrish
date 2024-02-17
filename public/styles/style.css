@@ -162,6 +162,11 @@ button:focus {
   align-items: start;
   justify-content: start;
 }
+.btn-form {
+  width: 45px;
+  height: 45px;
+}
+
 .btn-xs {
   top: 2px;
   right: 2px;
@@ -320,8 +325,16 @@ input[type="file"]::file-selector-button {
 
 table {
   border: 1px solid var(--purple);
+  border-collapse: collapse;
 }
 
 thead {
   background-color: var(--blue);
+}
+th,
+td {
+  text-align: center;
+  border: 1px solid var(--blue);
+  justify-content: center;
+  align-items: center;
 }
