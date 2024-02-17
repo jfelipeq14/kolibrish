@@ -155,6 +155,11 @@ button:focus {
   align-items: start;
   justify-content: start;
 }
+.btn-form {
+  width: 45px;
+  height: 45px;
+}
+
 .btn-xs {
   top: 2px;
   right: 2px;
@@ -251,9 +256,9 @@ footer article a {
 }
 
 /* pantalla de productos */
-body {
+/* body {
   background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
-}
+} */
 
 fieldset {
   border: none;
@@ -325,8 +330,4 @@ td {
   border: 1px solid var(--blue);
   justify-content: center;
   align-items: center;
-}
-.btn-form {
-  width: 45px;
-  height: 45px;
 }
