@@ -242,6 +242,10 @@ footer article div ul {
   text-decoration: none;
 }
 
+footer article div ul li a {
+  color: white;
+}
+
 footer article a {
   margin: 30px auto;
   color: var(--blue);
@@ -249,9 +253,9 @@ footer article a {
 }
 
 /* pantalla de productos */
-body {
+/* body {
   background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
-}
+} */
 
 fieldset {
   border: none;
