@@ -19,7 +19,7 @@
 body {
   text-align: center;
   font-family: sans-serif;
-  text-transform: capitalize;
+  text-transform: uppercase;
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 
@@ -225,13 +225,11 @@ footer article {
   width: 50vw;
   display: grid;
   text-align: start;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 footer article h3 {
   margin: 30px auto;
-  text-align: center;
 }
 
 footer article div h4 {
@@ -240,18 +238,14 @@ footer article div h4 {
   color: var(--blue);
 }
 
-footer article div ul {
-  color: white;
-  font-size: large;
-  text-decoration: none;
-}
-
+footer article div ul,
 footer article div ul li a {
   color: white;
+  font-size: large;
 }
 
 footer article a {
-  margin: 30px auto;
+  margin: 30px 0;
   color: var(--blue);
   text-decoration: none;
 }
@@ -278,19 +272,20 @@ fieldset legend {
 
 label {
   display: grid;
-  margin: 10px auto;
+  margin: 10px 0;
   align-items: center;
-  grid-template-columns: 60px auto;
+  justify-items: start;
+  grid-template-columns: 80px 1fr;
 }
 
 input[type="file"] {
-  max-width: 150px;
+  margin: auto 30px;
+  max-width: 145px;
   height: 190px;
 }
 label img {
   position: static;
   max-width: 100px;
-  margin: 0 auto;
 }
 
 input[type="file"]::file-selector-button {
@@ -299,12 +294,7 @@ input[type="file"]::file-selector-button {
   height: 34px;
   display: flex;
   color: white;
-  margin: 0 auto;
   cursor: pointer;
-  font-size: 12px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
   border-radius: var(--radius);
   background-color: var(--blue);
   -o-border-radius: var(--radius);
