@@ -227,6 +227,7 @@ footer article div h4 {
 footer article div ul {
   color: white;
   font-size: large;
+  text-decoration: none;
 }
 
 footer article a {
