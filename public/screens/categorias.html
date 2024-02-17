@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Categorias</title>
+  </head>
+  <body>
+    <nav>
+      <h3 class="title">Catálogo moda</h3>
+      <button class="d-block btn-sm" id="logout">Logout</button>
+    </nav>
+    <main>
+      <section class="grid">
+        <article>
+          <form>
+            <fieldset>
+              <legend>Crear categoria</legend>
+              <label
+                >Nombre:
+                <input type="text" placeholder="Nombre" />
+              </label>
+              <button class="btn btn-form">Consultar</button>
+            </fieldset>
+            <div class="buttons">
+              <button class="btn btn-sm">Guardar</button>
+              <button class="btn btn-sm">Nuevo</button>
+              <button class="btn btn-sm">Consultar</button>
+            </div>
+          </form>
+        </article>
+        <article>
+          <fieldset>
+            <legend>Categorias</legend>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombres</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="table-content"></tbody>
+            </table>
+          </fieldset>
+        </article>
+      </section>
+    </main>
+    <script src="../js/services/categorias/services.js"></script>
+  </body>
+</html>
