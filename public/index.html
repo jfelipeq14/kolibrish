@@ -16,35 +16,31 @@
   <body>
     <nav>
       <h3 class="title">Catálogo moda</h3>
-      <button class="d-none btn-md" id="logout">Logout</button>
+      <button class="d-none btn-sm" id="logout">Logout</button>
 
-      <button class="d-block btn-md" id="login">INGRESAR</button>
+      <button class="d-block btn-sm" id="login">INGRESAR</button>
     </nav>
 
     <!-- El formulario dentro del modal empieza aqui -->
     <main class="container">
       <dialog id="pop-up">
-        <button id="hiddenPopup" class="btn-xs">X</button>
+        <button id="hiddenPopup" class="btn btn-xs">X</button>
         <h3>Iniciar sesión</h3>
         <form id="login-form">
-          <label
-            ><input
-              type="email"
-              id="login-email"
-              class="input"
-              placeholder="Email"
-              required
+          <label>
+            Correo:
+            <input type="email" id="login-email" placeholder="Email" required
           /></label>
 
-          <label class="password"
-            ><input
+          <label class="password">
+            Contraseña:
+            <input
               type="password"
               id="login-password"
-              class="input"
               placeholder="Password"
               required
           /></label>
-          <button type="submit" class="btn btn-md">Ingresar</button>
+          <button type="submit" class="btn btn-sm">Ingresar</button>
         </form>
       </dialog>
       <section id="main"></section>
@@ -57,15 +53,11 @@
 
     <footer class="d-flex">
       <article>
-        <h3>
-          CONTÁCTANOS
-        </h3>
+        <h3>CONTÁCTANOS</h3>
       </article>
       <article>
         <div>
-          <h4>
-            Ubicación
-          </h4>
+          <h4>Ubicación</h4>
           <ul>
             <li>Calle 0 #00-00</li>
             <li>Medellin - Antioquia</li>
@@ -74,14 +66,25 @@
         <div>
           <h4>redes sociales</h4>
           <ul>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">X</a></li>
+            <li>
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a href="http://" target="_blank" rel="noopener noreferrer">X</a>
+            </li>
           </ul>
         </div>
-        <a href="mailto:Kolibrish@company.com.co" class="d-block">Kolibrish@company.com.co</a>
+        <a href="mailto:Kolibrish@company.com.co" class="d-block"
+          >Kolibrish@company.com.co</a
+        >
       </article>
-
     </footer>
 
     <script src="./js/helper/showModal.js"></script>

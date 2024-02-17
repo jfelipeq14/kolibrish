@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <nav>
+      <h3 class="title">Catálogo moda</h3>
+      <button class="d-block btn-sm" id="logout">Logout</button>
+    </nav>
+    <main>
+      <section class="grid">
+        <article>
+          <form>
+            <fieldset>
+              <legend>Crear producto</legend>
+              <article>
+                <label
+                  >Categorias:
+                  <select id="categorias-list">
+                    <option selected>Seleccionar</option>
+                  </select>
+                </label>
+                <label>
+                  Nombre:
+                  <input
+                    type="text"
+                    id="nombre-producto"
+                    placeholder="Faldas"
+                  />
+                </label>
+                <label>
+                  Descripcion:
+                  <textarea id="descripcion-producto" class="input"></textarea>
+                </label>
+                <label>
+                  Sexo:
+                  <select id="sexo-producto">
+                    <option selected>Seleccionar</option>
+                    <option value="m">Masculino</option>
+                    <option value="f">Femenino</option>
+                    <option value="u">Unisex</option>
+                  </select>
+                </label>
+              </article>
+              <article>
+                <label>
+                  <input
+                    type="file"
+                    id="imagen-producto"
+                    placeholder="Subir imagen"
+                  />
+                </label>
+              </article>
+            </fieldset>
+            <div class="buttons">
+              <button class="btn btn-sm">Guardar</button>
+              <button class="btn btn-sm">Nuevo</button>
+              <button class="btn btn-sm">Consultar</button>
+            </div>
+          </form>
+        </article>
+        <article>
+          <fieldset>
+            <legend>Productos</legend>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripcion</th>
+                  <th>Sexo</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="table-productos"></tbody>
+            </table>
+          </fieldset>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
