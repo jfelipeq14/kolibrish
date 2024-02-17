@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Categorias</title>
+  </head>
+  <body>
+    <nav>
+      <h3 class="title">Catálogo moda</h3>
+      <button class="d-block btn-sm" id="logout">Logout</button>
+    </nav>
+    <main>
+      <section class="grid">
+        <article>
+          <form>
+            <fieldset>
+              <legend>Crear categoria</legend>
+              <label
+                >Nombre:
+                <input type="text" placeholder="Nombre" />
+              </label>
+              <button class="btn btn-form">Consultar</button>
+            </fieldset>
+            <div class="buttons">
+              <button class="btn btn-sm">Guardar</button>
+              <button class="btn btn-sm">Nuevo</button>
+              <button class="btn btn-sm">Consultar</button>
+            </div>
+          </form>
+        </article>
+        <article>
+          <fieldset>
+            <legend>Categorias</legend>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombres</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="table-content"></tbody>
+            </table>
+          </fieldset>
+        </article>
+      </section>
+    </main>
+    <script>
+      const table_Productos = document.getElementById("table-content");
+      const array = [
+        {
+          id: 1234,
+          nombre: "Faldas",
+          productos: [
+            {
+              id: 5678,
+              nombre: "Falda Xd",
+              descripcion: "Cool, men",
+              habilitado: true,
+            },
+          ],
+        },
+        {
+          id: 8010,
+          nombre: "Cacheteros",
+          productos: [
+            {
+              id: 5678,
+              nombre: "Falda Xd",
+              descripcion: "Cool, men",
+              habilitado: true,
+            },
+          ],
+        },
+        {
+          id: 8617,
+          nombre: "Chaquetas",
+          productos: [
+            {
+              id: 5678,
+              nombre: "Falda Xd",
+              descripcion: "Cool, men",
+              habilitado: true,
+            },
+          ],
+        },
+      ];
+      if (array.length) {
+        let html = "";
+        array.forEach((data) => {
+          const tbody = `
+                <tr>
+                  <td>${data.nombre}</td>
+                  <td class="d-flex">
+                    <button class="btn btn-form">Edit</button>
+                    <button class="btn btn-form">Delete</button>
+                  </td>
+                </tr>
+          `;
+
+          html += tbody;
+        });
+        table_Productos.innerHTML += html;
+        let newArray = array.slice(1, 3);
+        console.log(newArray);
+      }
+    </script>
+  </body>
+</html>
