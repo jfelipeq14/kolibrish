@@ -23,6 +23,17 @@ body {
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* padding: 12px; */
+  font-size: 32px;
+  font-weight: bold;
+}
+
 nav {
   width: 100%;
   display: flex;
@@ -100,17 +111,6 @@ button:hover {
 
 button:focus {
   color: var(--purple);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 12px;
-  font-size: 32px;
-  font-weight: bold;
 }
 
 .title {
@@ -196,53 +196,41 @@ footer {
   -webkit-border-radius: var(--radius);
   background-image: url();
 }
+
 /* footer */
-footer{
+footer {
   width: 100vw;
   height: 100vh;
+  align-items: start;
+  color: var(--purple);
 }
 
-.d-flex{
-  color: #364797;
-  
- 
-
+footer article {
+  width: 50vw;
+  display: grid;
+  text-align: start;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
-.contac{
-
-  text-align: flex start;
-  flex-direction: row;
-  height: 990px ;
-}
-
-.ubi{
-  text-align: right;
-  width: 1400px;
-  height: 475px;
-  margin-top: -500px;
-  justify-content: flex end;
-  color: #24BAE4;
-}
-.Dire{
-  text-align:  right;
-  width: auto;
-  height: auto;
-
-  justify-content: center ;
-  
-  color: #ffffff;
-  
-
-}
-.social{
-  text-align: right;
-  width: 1500px;
-  height: 80px;
-  margin-top: -500px;
-  color: #24BAE4;
+footer article h3 {
+  margin: 30px auto;
   text-align: center;
 }
-.redes{
-  color: #ffffff;
+
+footer article div h4 {
+  margin: 30px auto;
+  font-size: x-large;
+  color: var(--blue);
+}
+
+footer article div ul {
+  color: white;
+  font-size: large;
+}
+
+footer article a {
+  margin: 30px auto;
+  color: var(--blue);
+  text-decoration: none;
 }
