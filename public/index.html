@@ -18,12 +18,30 @@
       <picture>
         <source type="image/avif" srcset="image.avif" />
         <source type="image/webp" srcset="image.webp" />
-        <img src="./assets/IMG-20240205-WA0033.jpg" alt="Logo de la empresa" />
+        <img src="./assets/IMG-20240205-WA0033.jpg" alt="" />
       </picture>
+      <img class="logo" src="/public/assets/logo .png" alt="">
+      <ul>
+        <li class="titleCat"><a href="./screens/categorias.html">CATEGORIAS</a></li>
+        <li class="titlecont"><a href="#footer">CONTACTO</a></li>
+      </ul>
+
       <button class="d-none btn-sm" id="logout">Logout</button>
 
       <button class="d-block btn-sm" id="login">INGRESAR</button>
     </nav>
+
+    <!--Section de inicio-->
+    <div class="inicio">
+      <article class="nuevoProd">
+        <H1 class="h1-nuevo">NUEVO <br> PRODUCTO</H1>
+        <div class="slider-container">
+          <div class="slider position"></div>
+        </div>
+      </article>
+      <br>
+      <button class="btn-categ" id="#footer">CATEGORIAS</button> 
+    </div>
 
     <!-- El formulario dentro del modal empieza aqui -->
     <main class="container">
@@ -53,7 +71,7 @@
     </main>
     <!-- El formulario dentro del modal termina aqui -->
 
-    <footer class="d-flex">
+    <footer class="d-flex" id="footer">
       <article>
         <h3>CONTÁCTANOS</h3>
       </article>
