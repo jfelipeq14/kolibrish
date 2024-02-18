@@ -295,21 +295,6 @@ button:focus {
   font-size: 16px;
 }
 
-#categorias {
-  display: flex;
-  margin: 12px auto;
-  align-items: center;
-  justify-content: start;
-}
-
-#productos {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .card {
   width: 12rem;
   height: auto;
@@ -431,6 +416,7 @@ table {
 thead {
   background-color: var(--blue);
 }
+
 th,
 td {
   text-align: center;
