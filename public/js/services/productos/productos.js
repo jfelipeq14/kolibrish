@@ -42,9 +42,9 @@ categorias.addEventListener('change', () => {
         <td>${data[i].nombre}</td>
         <td>${data[i].descripcion}</td>
         <td>${data[i].habilitado}</td>
-        <td>
-          <button class="btn btn-form">Edit</button>
-          <button class="btn btn-form">Delete</button>
+        <td class="d-flex">
+          <button class="btn-blue btn-icon">⚙</button>
+          <button class="btn-blue btn-icon">✖</button>
         </td>
       </tr>
       `

@@ -8,8 +8,27 @@
   </head>
   <body>
     <nav>
-      <h3 class="title">Catálogo moda</h3>
-      <button class="d-block btn-sm" id="logout">Logout</button>
+      <picture>
+        <source type="image/avif" srcset="image.avif" />
+        <source type="image/webp" srcset="image.webp" />
+        <img src="./assets/IMG-20240205-WA0033.jpg" alt="Descripcion" />
+      </picture>
+      <ul>
+        <li>
+          <button class="btn-sm">
+            <a href="#categorias">CATEGORIAS</a>
+          </button>
+        </li>
+        <li>
+          <button class="btn-sm">
+            <a href="#footer">CONTACTO</a>
+          </button>
+        </li>
+        <li>
+          <!-- <button class="d-block btn-sm btn-blue" id="login">LOGIN</button> -->
+          <button class="d-block btn-sm btn-blue" id="logout">LOGOUT</button>
+        </li>
+      </ul>
     </nav>
     <main>
       <section class="grid">
@@ -21,12 +40,14 @@
                 >Nombre:
                 <input type="text" placeholder="Nombre" />
               </label>
-              <button class="btn btn-form">Consultar</button>
+              <div class="buttons">
+                <button class="btn-blue btn-icon">🔍</button>
+              </div>
             </fieldset>
             <div class="buttons">
-              <button class="btn btn-sm">Guardar</button>
-              <button class="btn btn-sm">Nuevo</button>
-              <button class="btn btn-sm">Consultar</button>
+              <button class="btn-blue btn-sm">💾 Guardar</button>
+              <button class="btn-blue btn-sm">📃 Nuevo</button>
+              <button class="btn-blue btn-sm">🔍 Consultar</button>
             </div>
           </form>
         </article>

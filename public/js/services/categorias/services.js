@@ -8,8 +8,8 @@ if (data.length) {
       <tr>
         <td>${data.nombre}</td>
         <td class="d-flex">
-          <button class="btn btn-form">Edit</button>
-          <button class="btn btn-form">Delete</button>
+          <button class="btn-blue btn-icon">⚙</button>
+          <button class="btn-blue btn-icon">✖</button>
         </td>
       </tr>
       `
