@@ -20,9 +20,9 @@
             <fieldset>
               <legend>Crear producto</legend>
               <article>
-                <label
-                  >Categorias:
-                  <select id="categorias-list">
+                <label>
+                  Categorias:
+                  <select id="categorias">
                     <option selected>Seleccionar</option>
                   </select>
                 </label>
@@ -40,7 +40,7 @@
                 </label>
                 <label>
                   Sexo:
-                  <select id="sexo-producto">
+                  <select id="sexo">
                     <option selected>Seleccionar</option>
                     <option value="m">Masculino</option>
                     <option value="f">Femenino</option>
@@ -80,17 +80,18 @@
             <table>
               <thead>
                 <tr>
-                  <th>Nombre</th>
+                  <th>Nombres</th>
                   <th>Descripcion</th>
-                  <th>Sexo</th>
+                  <th>Habilitado</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
-              <tbody id="table-productos"></tbody>
+              <tbody id="table-content"></tbody>
             </table>
           </fieldset>
         </article>
       </section>
     </main>
+    <script src="../js/services/productos/productos.js" type="module"></script>
   </body>
 </html>
