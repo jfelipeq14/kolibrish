@@ -244,6 +244,14 @@ button a:hover {
   display: grid;
 }
 
+header#categorias {
+  overflow-x: scroll;
+}
+
+article#productos {
+  overflow-y: scroll;
+}
+
 .card {
   width: 12rem;
   height: auto;
