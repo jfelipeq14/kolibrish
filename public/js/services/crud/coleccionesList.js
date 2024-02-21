@@ -1,51 +1,43 @@
-import { getData } from './getData.js'
-
+import { data } from './data.js'
 // #region atributos
 const categoriasList = document.getElementById('categorias')
 const productosList = document.getElementById('productos')
+const buttons = document.getElementById('categorias')
 const listProductos = []
-let validColeccion
+let validProduct
 // #endregion
-
 // #region functions
-export const setupColecciones = async (string) => {
-  const array = await getData(string)
-  if (array.length) {
+export const setupColecciones = async () => {
+  if (data.length) {
     let html = ''
-    array.forEach((data) => {
+    data.forEach((data) => {
       const option = `
-        <button id="${data.id}" class="btn-sm btn-fucsia">${data.nombre}</button>
+        <button value="${data.id}" class="btn-sm btn-fucsia">${data.nombre}</button>
       `
-      listProductos.push({ id: data.id, conjuntos: data.conjuntos })
+      listProductos.push({ id: data.id, productos: data.productos })
       html += option
     })
     categoriasList.innerHTML += html
   }
 }
-
 const searchById = (id, data) => {
   if (id && data.length) {
     return data.find((search) => search.id === id)
   }
 }
 // #endregion
-
 // #region event
-categoriasList.addEventListener('change', () => {
-  const id = categoriasList.value
-  validColeccion = searchById(parseInt(id), listProductos)
-  if (validColeccion) {
-    console.log(listProductos)
-    productosList.innerHTML = validColeccion.conjuntos.map((conjunto) => {
-      // console.log(conjunto.nombre)
+buttons.addEventListener('click', (e) => {
+  getProducts(parseInt(e.target.value))
+})
+const getProducts = (id) => {
+  validProduct = searchById(parseInt(id), listProductos)
+  if (validProduct) {
+    productosList.innerHTML = validProduct.productos.map((conjunto) => {
       return `
-        <div class="card">
-          <h3 class="title">${conjunto.nombre}</h3>
-          <p>${conjunto.habilitado}</p>
-          <span>${conjunto.descripcion}</span>
-        </div>
-        `
+      
+      `
     })
   }
-})
+}
 // #endregion

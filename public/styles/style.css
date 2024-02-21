@@ -6,7 +6,6 @@
   --border: 1px solid black;
   --shadow: 0 0 15px 4px #00000020;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -18,17 +17,14 @@
   font-family: sans-serif;
   text-transform: uppercase;
 }
-
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
-
 body {
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
-
 h1,
 h2,
 h3,
@@ -39,12 +35,10 @@ h6 {
   font-size: 32px;
   font-weight: bold;
 }
-
 .title {
   text-align: center;
   color: white;
 }
-
 nav {
   width: 100vw;
   display: flex;
@@ -52,14 +46,12 @@ nav {
   padding: 8px;
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
-
 nav ul {
   gap: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 section {
   width: 100vw;
   height: 100vh;
@@ -67,7 +59,6 @@ section {
   align-items: center;
   justify-content: center;
 }
-
 dialog {
   width: 400px;
   margin: auto auto;
@@ -82,29 +73,24 @@ dialog {
   -webkit-border-radius: var(--radius);
   -webkit-border-radius: var(--radius);
 }
-
 dialog h3 {
   margin: 30px auto;
   text-align: center;
   font-size: x-large;
 }
-
 dialog .buttons {
   justify-content: center;
 }
-
 dialog label,
 dialog label input {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 dialog::backdrop {
   backdrop-filter: blur(8px);
   background-color: #00000082;
 }
-
 input,
 select,
 textarea {
@@ -122,13 +108,11 @@ textarea {
   -webkit-border-radius: 6px;
   background-color: transparent;
 }
-
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
   color: #00000082;
 }
-
 input:focus,
 select:focus,
 textarea:focus {
@@ -136,7 +120,6 @@ textarea:focus {
   outline: 1px solid var(--blue);
   background-color: transparent;
 }
-
 button,
 button a {
   border: none;
@@ -150,75 +133,61 @@ button a {
   -moz-border-radius: var(--radius);
   -webkit-border-radius: var(--radius);
 }
-
 button:hover {
   color: var(--purple);
 }
-
 button a {
   color: white;
 }
-
 button a:hover {
   color: var(--purple);
 }
-
 .buttons {
   gap: 12px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
-
 .btn-blue {
   color: white;
   background-color: var(--blue);
 }
-
 .btn-white {
   color: var(--purple);
   background-color: white;
 }
-
 .btn-purple {
   color: white;
   background-color: var(--purple);
 }
-
 .btn-fucsia {
   color: white;
   background-color: var(--fucsia);
   opacity: 0.8;
 }
-
 .btn-fucsia:focus {
   opacity: unset;
   color: white;
 }
-
 .btn-icon {
   width: 40px;
   height: 40px;
 }
-
 .btn-xs {
   width: 100px;
   height: 30px;
   font-size: 10px;
 }
-
 .btn-sm {
   width: 116px;
   height: 34px;
   font-size: 12px;
 }
-
 .btn-md {
   width: 142px;
   height: 42px;
   font-size: 16px;
 }
-
 .close {
   top: 2px;
   right: 2px;
@@ -226,33 +195,28 @@ button a:hover {
   cursor: pointer;
   position: absolute;
 }
-
 /* class */
 .d-none {
   display: none;
 }
-
 .d-block {
   display: block;
 }
-
 .d-flex {
   display: flex;
 }
-
 .d-grid {
   display: grid;
 }
-
 header#categorias {
   overflow-x: scroll;
 }
-
 article#productos {
   overflow-y: scroll;
 }
-
+/* card de productos */
 .card {
+  display: inline-block;
   width: 12rem;
   height: auto;
   margin: 0 auto;
@@ -265,56 +229,46 @@ article#productos {
   -webkit-border-radius: var(--radius);
   background-image: url();
 }
-
 /* footer */
-
 footer {
   width: 100vw;
   height: 100vh;
   align-items: start;
   color: var(--purple);
 }
-
 footer article {
   width: 50vw;
   display: grid;
   text-align: start;
   grid-template-columns: repeat(2, 1fr);
 }
-
 footer article h3 {
   margin: 30px auto;
 }
-
 footer article div h4 {
   margin: 30px auto;
   font-size: x-large;
   color: var(--blue);
 }
-
 footer article div ul,
 footer article div ul li a {
   color: white;
   font-size: large;
 }
-
 footer article a {
   margin: 30px 0;
   color: var(--blue);
   text-decoration: none;
 }
-
 /* pantalla de productos */
 /* body {
   background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
 } */
-
 fieldset {
   border: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 fieldset legend {
   width: 100%;
   margin: 30px 0;
@@ -323,7 +277,6 @@ fieldset legend {
   color: var(--purple);
   border-bottom: 2px solid var(--purple);
 }
-
 label {
   display: grid;
   margin: 10px 0;
@@ -331,18 +284,15 @@ label {
   justify-items: start;
   grid-template-columns: 80px 1fr;
 }
-
 input[type="file"] {
   margin: auto 30px;
   max-width: 145px;
   height: 190px;
 }
-
 label img {
   position: static;
   max-width: 100px;
 }
-
 input[type="file"]::file-selector-button {
   border: none;
   width: 116px;
@@ -357,7 +307,6 @@ input[type="file"]::file-selector-button {
   -moz-border-radius: var(--radius);
   -webkit-border-radius: var(--radius);
 }
-
 .grid {
   gap: 30px;
   display: grid;
@@ -365,16 +314,13 @@ input[type="file"]::file-selector-button {
   align-items: start;
   grid-template-columns: repeat(2, 1fr);
 }
-
 table {
   border-collapse: collapse;
   border: 1px solid var(--purple);
 }
-
 thead {
   background-color: var(--blue);
 }
-
 th,
 td {
   padding: 8px;
