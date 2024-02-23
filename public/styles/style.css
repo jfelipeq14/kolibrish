@@ -228,6 +228,7 @@ article#productos {
   -moz-border-radius: var(--radius);
   -webkit-border-radius: var(--radius);
   background-image: url();
+  align-items: center;
 }
 /* footer */
 footer {
@@ -328,4 +329,61 @@ td {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--blue);
+}
+
+/* creacion de las cards */
+
+#productos {
+  display: flex;
+  padding: 100px;
+  justify-content: space-between;
+}
+
+.cards {
+  width: 354px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.5s;
+  margin-top: 30px;
+  gap: 8px;
+  border: 1px solid #ccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 7px;
+  text-align: start;
+}
+
+.cards img {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.cards:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 0.6) 80%
+  );
+}
+
+.cards h3 {
+  font-size: x-large;
+}
+
+section article div h3,
+p,
+span {
+  display: flex;
+  padding: 7px;
+  align-items: flex-end;
+  color: white;
 }
