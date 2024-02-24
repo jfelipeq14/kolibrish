@@ -33,9 +33,17 @@ buttons.addEventListener('click', (e) => {
 const getProducts = (id) => {
   validProduct = searchById(parseInt(id), listProductos)
   if (validProduct) {
-    productosList.innerHTML = validProduct.productos.map((conjunto) => {
+    productosList.innerHTML = validProduct.productos.map((producto) => {
       return `
-      
+      <div class="cards">
+      <img
+        src="${producto.img}"
+        alt=""
+      />
+      <h3 class="title">${producto.nombre}</h3>
+      <p>${producto.descripcion}</p>
+      <button class="btn-white btn-xs">COMPRAR</button>
+    </div>
       `
     })
   }
