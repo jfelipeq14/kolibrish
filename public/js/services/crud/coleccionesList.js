@@ -30,6 +30,7 @@ const searchById = (id, data) => {
 buttons.addEventListener('click', (e) => {
   getProducts(parseInt(e.target.value))
 })
+
 const getProducts = (id) => {
   validProduct = searchById(parseInt(id), listProductos)
   if (validProduct) {
@@ -37,7 +38,7 @@ const getProducts = (id) => {
       return `
       <div class="cards">
       <img
-        src="${producto.img}"
+        src="https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_helmet_1185318_480x854.jpg"
         alt=""
       />
       <h3 class="title">${producto.nombre}</h3>
