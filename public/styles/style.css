@@ -261,9 +261,9 @@ footer article a {
   text-decoration: none;
 }
 /* pantalla de productos */
-/* body {
+body {
   background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
-} */
+}
 fieldset {
   border: none;
   display: grid;
