@@ -1,5 +1,5 @@
-import { data } from './data.js'
 // #region atributos
+import { data } from './data.js'
 const categoriasList = document.getElementById('categorias')
 const productosList = document.getElementById('productos')
 const buttons = document.getElementById('categorias')
