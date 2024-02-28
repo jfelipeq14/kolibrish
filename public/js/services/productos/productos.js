@@ -9,15 +9,12 @@ let validData
 
 // #region functions
 if (data.length) {
-  let html = ''
   data.forEach((data) => {
-    const option = `
+    categorias.innerHTML += `
       <option value="${data.id}">${data.nombre}</option>
     `
     listProductos.push({ id: data.id, productos: data.productos })
-    html += option
   })
-  categorias.innerHTML += html
 }
 
 const searchById = (id, data) => {

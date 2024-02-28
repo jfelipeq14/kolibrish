@@ -43,8 +43,9 @@ h6 {
 nav {
   width: 100vw;
   display: flex;
-  justify-content: space-between;
   padding: 8px;
+  height: fit-content;
+  justify-content: space-between;
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 nav ul {
@@ -199,7 +200,6 @@ button a:hover {
   cursor: pointer;
   position: absolute;
 }
-/* class */
 .d-none {
   display: none;
 }
@@ -220,7 +220,6 @@ article#productos {
   overflow-y: scroll;
   overscroll-behavior: contain;
 }
-/* card de productos */
 .card {
   display: inline-block;
   width: 12rem;
@@ -236,12 +235,13 @@ article#productos {
   background-image: url();
   align-items: center;
 }
-/* footer */
 footer {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   align-items: start;
   color: var(--purple);
+  position: fixed;
+  bottom: 0;
 }
 footer article {
   width: 50vw;
@@ -388,4 +388,12 @@ span {
   padding: 7px;
   align-items: flex-end;
   color: white;
+}
+
+img{
+  border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+  -moz-border-radius: var(--radius);
+  -ms-border-radius: var(--radius);
+  -o-border-radius: var(--radius);
 }

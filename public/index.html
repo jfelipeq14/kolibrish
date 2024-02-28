@@ -26,55 +26,7 @@
         </li>
       </ul>
     </nav>
-    <!-- El formulario dentro del modal empieza aqui -->
-    <main>
-      <!-- Modal Login -->
-      <dialog id="pop-up">
-        <button id="hiddenPopup" class="btn-icon close btn-blue">X</button>
-        <h3>Iniciar sesión</h3>
-        <form id="login-form">
-          <label>
-            <input
-              type="email"
-              id="login-email"
-              placeholder="kolibrish@company.co"
-              required
-          /></label>
-          <label class="password">
-            <input
-              type="password"
-              id="login-password"
-              placeholder="************"
-              required
-          /></label>
-          <div class="buttons">
-            <button type="submit" class="btn-sm btn-blue">Ingresar</button>
-          </div>
-        </form>
-      </dialog>
-      <!--Section de inicio-->
-      <section id="main" class="d-flex">
-        <article>
-          <h1 class="title">NUEVO PRODUCTO</h1>
-          <button class="btn-white btn-sm">Categoria</button>
-        </article>
-        <article>
-          <a href="#categorias" class="btn-sm">
-            <img
-              src="https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_helmet_1185318_240x320.jpg"
-              alt="Descripcion"
-            />
-          </a>
-        </article>
-      </section>
-      <!--  -->
-      <section class="section">
-        <!-- le puse una clase al section -->
-        <header id="categorias"></header>
-        <article id="productos"></article>
-      </section>
-    </main>
-    <!-- El formulario dentro del modal termina aqui -->
+    <main id="content"></main>
     <footer class="d-flex" id="footer">
       <article>
         <h3>CONTÁCTANOS</h3>
@@ -108,7 +60,6 @@
         <a href="mailto:kolibrish@company.com.co">kolibrish@company.com.co</a>
       </article>
     </footer>
-    <script src="./js/helper/showModal.js"></script>
     <script src="./js/main.js" type="module"></script>
   </body>
 </html>

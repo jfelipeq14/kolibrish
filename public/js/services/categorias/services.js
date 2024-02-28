@@ -1,4 +1,4 @@
-import { data } from '../crud/data.js'
+import { data } from '../general/local/data.js'
 const tableProductos = document.getElementById('table-content')
 
 if (data.length) {
