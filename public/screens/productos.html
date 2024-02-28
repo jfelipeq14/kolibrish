@@ -1,116 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kolibrish - Productos</title>
-    <link rel="stylesheet" href="../styles/style.css" />
-
-    <style></style>
-  </head>
-  <body>
-    <nav>
-      <picture>
-        <source type="image/avif" srcset="image.avif" />
-        <source type="image/webp" srcset="image.webp" />
-        <img src="./assets/IMG-20240205-WA0033.jpg" alt="Descripcion" />
-      </picture>
-      <ul>
-        <li>
-          <button class="btn-sm">
-            <a href="#categorias">CATEGORIAS</a>
-          </button>
-        </li>
-        <li>
-          <button class="btn-sm">
-            <a href="#footer">CONTACTO</a>
-          </button>
-        </li>
-        <li>
-          <!-- <button class="d-block btn-sm btn-blue" id="login">LOGIN</button> -->
-          <button class="d-block btn-sm btn-blue" id="logout">LOGOUT</button>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <section class="grid">
+<section class="grid">
+  <article>
+    <form>
+      <fieldset>
+        <legend>Crear producto</legend>
         <article>
-          <form>
-            <fieldset>
-              <legend>Crear producto</legend>
-              <article>
-                <label>
-                  Categorias:
-                  <select id="categorias">
-                    <option selected>Seleccionar</option>
-                  </select>
-                </label>
-                <label>
-                  Nombre:
-                  <input
-                    type="text"
-                    id="nombre-producto"
-                    placeholder="Faldas"
-                  />
-                </label>
-                <label>
-                  Descripcion:
-                  <textarea id="descripcion-producto" class="input"></textarea>
-                </label>
-                <label>
-                  Sexo:
-                  <select id="sexo">
-                    <option selected>Seleccionar</option>
-                    <option value="m">Masculino</option>
-                    <option value="f">Femenino</option>
-                    <option value="u">Unisex</option>
-                  </select>
-                </label>
-              </article>
-              <article>
-                <label>
-                  <input
-                    type="file"
-                    id="imagen-producto"
-                    accept="image/*"
-                    placeholder="Subir imagen"
-                  />
-                  <picture>
-                    <source type="image/avif" srcset="image.avif" />
-                    <source type="image/webp" srcset="image.webp" />
-                    <img
-                      src="./assets/IMG-20240205-WA0033.jpg"
-                      alt="Logo de la empresa"
-                    />
-                  </picture>
-                </label>
-              </article>
-            </fieldset>
-            <div class="buttons">
-              <button class="btn-blue btn-sm">💾 Guardar</button>
-              <button class="btn-blue btn-sm">📃 Nuevo</button>
-              <button class="btn-blue btn-sm">🔍 Consultar</button>
-            </div>
-          </form>
+          <label>
+            Categorias:
+            <select id="categorias">
+              <option selected>Seleccionar</option>
+            </select>
+          </label>
+          <label>
+            Nombre:
+            <input type="text" id="nombre-producto" placeholder="Faldas" />
+          </label>
+          <label>
+            Descripcion:
+            <textarea id="descripcion-producto" class="input"></textarea>
+          </label>
+          <label>
+            Sexo:
+            <select id="sexo">
+              <option selected>Seleccionar</option>
+              <option value="m">Masculino</option>
+              <option value="f">Femenino</option>
+              <option value="u">Unisex</option>
+            </select>
+          </label>
         </article>
         <article>
-          <fieldset>
-            <legend>Productos</legend>
-            <table>
-              <thead>
-                <tr>
-                  <th>Nombres</th>
-                  <th>Descripcion</th>
-                  <th>Habilitado</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody id="table-content"></tbody>
-            </table>
-          </fieldset>
+          <label>
+            <input
+              type="file"
+              id="imagen-producto"
+              accept="image/*"
+              placeholder="Subir imagen"
+            />
+            <picture>
+              <source type="image/avif" srcset="image.avif" />
+              <source type="image/webp" srcset="image.webp" />
+              <img
+                src="./assets/IMG-20240205-WA0033.jpg"
+                alt="Logo de la empresa"
+              />
+            </picture>
+          </label>
         </article>
-      </section>
-    </main>
-    <script src="../js/services/productos/productos.js" type="module"></script>
-  </body>
-</html>
+      </fieldset>
+      <div class="buttons">
+        <button class="btn-blue btn-sm">💾 Guardar</button>
+        <button class="btn-blue btn-sm">📃 Nuevo</button>
+        <button class="btn-blue btn-sm">🔍 Consultar</button>
+      </div>
+    </form>
+  </article>
+  <article>
+    <fieldset>
+      <legend>Productos</legend>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Descripcion</th>
+            <th>Habilitado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="table-content"></tbody>
+      </table>
+    </fieldset>
+  </article>
+</section>
+<script src="../js/services/productos/productos.js" type="module"></script>

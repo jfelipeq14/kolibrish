@@ -1,73 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <title>Kolibrish - Categorias</title>
-  </head>
-  <body>
-    <nav>
-      <picture>
-        <source type="image/avif" srcset="image.avif" />
-        <source type="image/webp" srcset="image.webp" />
-        <img src="./assets/IMG-20240205-WA0033.jpg" alt="Descripcion" />
-      </picture>
-      <ul>
-        <li>
-          <button class="btn-sm">
-            <a href="#categorias">CATEGORIAS</a>
-          </button>
-        </li>
-        <li>
-          <button class="btn-sm">
-            <a href="#footer">CONTACTO</a>
-          </button>
-        </li>
-        <li>
-          <!-- <button class="d-block btn-sm btn-blue" id="login">LOGIN</button> -->
-          <button class="d-block btn-sm btn-blue" id="logout">LOGOUT</button>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <section class="grid">
-        <article>
-          <form>
-            <fieldset>
-              <legend>Crear categoria</legend>
-              <label
-                >Nombre:
-                <input type="text" placeholder="Nombre" />
-              </label>
-              <div class="buttons">
-                <button class="btn-blue btn-icon">🔍</button>
-              </div>
-            </fieldset>
-            <div class="buttons">
-              <button class="btn-blue btn-sm">💾 Guardar</button>
-              <button class="btn-blue btn-sm">📃 Nuevo</button>
-              <button class="btn-blue btn-sm">🔍 Consultar</button>
-            </div>
-          </form>
-        </article>
-        <article>
-          <fieldset>
-            <legend>Categorias</legend>
+<section class="grid">
+  <article>
+    <form>
+      <fieldset>
+        <legend>Crear categoria</legend>
+        <label
+          >Nombre:
+          <input type="text" placeholder="Nombre" />
+        </label>
+        <div class="buttons">
+          <button class="btn-blue btn-icon">🔍</button>
+        </div>
+      </fieldset>
+      <div class="buttons">
+        <button class="btn-blue btn-sm">💾 Guardar</button>
+        <button class="btn-blue btn-sm">📃 Nuevo</button>
+        <button class="btn-blue btn-sm">🔍 Consultar</button>
+      </div>
+    </form>
+  </article>
+  <article>
+    <fieldset>
+      <legend>Categorias</legend>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Nombres</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody id="table-content"></tbody>
-            </table>
-          </fieldset>
-        </article>
-      </section>
-    </main>
-    <script src="../js/services/categorias/services.js" type="module"></script>
-  </body>
-</html>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="table-content"></tbody>
+      </table>
+    </fieldset>
+  </article>
+</section>
+<script src="../js/services/categorias/services.js" type="module"></script>

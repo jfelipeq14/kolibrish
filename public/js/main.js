@@ -4,27 +4,22 @@ import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/fi
 //   getDocs,
 //   collection
 // } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
-import { auth } from './config/firebase.js' // configuracion de firebase
-import { loginCheck } from './services/auth/loginCheck.js' // funcion para validar el login
-import { setupColecciones } from './services/crud/coleccionesList.js'
-// import { getData } from './services/crud/getData.js'
-// Rutas de los archivos a utilizar
+import { auth } from './config/firebase.js'
+import { loginCheck } from './services/auth/loginCheck.js'
 import './services/auth/signinForm.js'
 import './services/auth/logout.js'
 // #endregion
-// #region pruebas
+// #region functions
+// -------- TODAS LAS FUNCIONES VAN ACA SIN ESTE COMENTARIO --------
 // #endregion
-// estado de autenticacion, validar el usuario y cargar datos de la base de datos
+// #region events
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-    loginCheck(user)
     try {
-      console.log('Goleador')
+      loginCheck(user)
     } catch (error) {
       console.log(error)
     }
-  } else {
-    setupColecciones()
-    loginCheck(user)
   }
 })
+// #endregion

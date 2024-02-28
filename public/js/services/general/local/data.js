@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     id: 1234,
     nombre: 'Faldas',
@@ -49,4 +49,3 @@ const data = [
   }
 
 ]
-export { data }

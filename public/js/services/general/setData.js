@@ -4,6 +4,6 @@ import {
   setDoc
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
 
-export const setData = async (coleccion) => {
-  await setDoc(doc(db, 'categorias', coleccion.nombre), coleccion)
+export const setData = async (namecollection, data) => {
+  await setDoc(doc(db, namecollection, data.nombre), data)
 }
