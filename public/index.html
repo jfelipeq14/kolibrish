@@ -26,6 +26,28 @@
         </li>
       </ul>
     </nav>
+    <dialog id="pop-up">
+      <button id="hiddenPopup" class="btn-icon close btn-blue">X</button>
+      <h3>Iniciar sesión</h3>
+      <form id="login-form">
+        <label>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="kolibrish@company.co"
+            required /></label
+        ><label class="password">
+          <input
+            type="password"
+            id="login-password"
+            placeholder="************"
+            required
+        /></label>
+        <div class="buttons">
+          <button type="submit" class="btn-sm btn-blue">Ingresar</button>
+        </div>
+      </form>
+    </dialog>
     <main id="content"></main>
     <footer class="d-flex" id="footer">
       <article>
@@ -61,5 +83,7 @@
       </article>
     </footer>
     <script src="./js/main.js" type="module"></script>
+    <!-- <script src="./js/services/index/index.js" type="module"></script> -->
+    <script src="./js/helper/showModal.js"></script>
   </body>
 </html>

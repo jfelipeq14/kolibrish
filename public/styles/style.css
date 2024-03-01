@@ -240,8 +240,6 @@ footer {
   height: fit-content;
   align-items: start;
   color: var(--purple);
-  position: fixed;
-  bottom: 0;
 }
 footer article {
   width: 50vw;
