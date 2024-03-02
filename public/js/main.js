@@ -9,7 +9,6 @@ import { auth } from './config/firebase.js'
 import './services/auth/signinForm.js'
 import './services/auth/logout.js'
 import './screens/index/index.js'
-import './services/general/setData.js'
 
 // #endregion
 // #region functions

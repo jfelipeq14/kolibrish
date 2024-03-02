@@ -4,15 +4,19 @@ import {
   setDoc
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
 
-const jsondata = {
-  nombre: 'faldas',
-  productos: []
+// modelForCategory
+// const jsondata = {
+//   id: myuuid,
+//   nombre: 'pantalones',
+//   productos: []
+// }
+
+export const setDataCollection = async (stringNameCollection, jsonData) => {
+  await setDoc(doc(db, stringNameCollection, jsonData.nombre), jsonData)
 }
 
-const setData = async (stringNameCollection, data) => {
-  await setDoc(doc(db, stringNameCollection, data.nombre), data)
+export const setDataForArray = async (stringNameCollection, arrayData) => {
+  // obtener los datos de esa coleccion
+  // crear una variable con los array
+  // agregar los datos nuevos al array que trae la db
 }
-
-(() => {
-  setData('categorias', jsondata)
-})()
