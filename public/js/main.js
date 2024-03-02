@@ -19,12 +19,9 @@ onAuthStateChanged(auth, async (user) => {
     try {
       loginCheck(user)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 })
-
-// #endregion
-// #region events
 
 // #endregion
