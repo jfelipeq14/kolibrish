@@ -5,13 +5,13 @@ import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase
 // #endregion
 // #region config
 const firebaseCredential = {
-  apiKey: 'AIzaSyBwq1iT_vULXFGgTJ0Hac0bXEFHPTNzEGM',
-  authDomain: 'pau-design-709a5.firebaseapp.com',
-  projectId: 'pau-design-709a5',
-  storageBucket: 'pau-design-709a5.appspot.com',
-  messagingSenderId: '787739831335',
-  appId: '1:787739831335:web:02f5817ae921a3a4eeb202'
-} // configuracion de firebase
+  apiKey: 'AIzaSyAsffhtN4JbTymFlu03yx7v65WTaA5dsUA',
+  authDomain: 'kolibrish-6cc75.firebaseapp.com',
+  projectId: 'kolibrish-6cc75',
+  storageBucket: 'kolibrish-6cc75.appspot.com',
+  messagingSenderId: '273221022600',
+  appId: '1:273221022600:web:d9fb1d7b98d18a24e9c03d'
+}// configuracion de firebase
 // #endregion
 
 // #region Initialize Firebase and services

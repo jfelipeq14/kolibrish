@@ -3,7 +3,13 @@ import {
   doc,
   setDoc
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
-
-export const setData = async (namecollection, data) => {
-  await setDoc(doc(db, namecollection, data.nombre), data)
+const jsondata = {
+  nombre: 'faldas', productos: []
 }
+const setData = async (categorias, jsondata) => {
+  await setDoc(doc(db, 'categorias', jsondata.nombre), jsondata)
+}
+
+(() => {
+  setData('categorias', jsondata)
+})()
