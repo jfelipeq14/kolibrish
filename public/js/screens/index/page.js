@@ -2,7 +2,6 @@ export const pageIndex = [
   '<section id="main" class="d-flex">',
   '<article>',
   '<h1 class="title">NUEVO PRODUCTO</h1>',
-  '<button class="btn-white btn-sm">Categoria</button>',
   '</article>',
   '<article>',
         `<a href="#categorias" class="btn-sm">

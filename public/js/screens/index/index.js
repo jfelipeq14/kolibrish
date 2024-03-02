@@ -3,30 +3,27 @@ import { searchById } from '../../services/general/search.js'
 import { data } from '../../services/general/local/data.js'
 import { pageIndex } from './page.js'
 
+const listProductos = []
 let categoriasList
 let productosList
-let buttons
-
-const listProductos = []
 let dataCategory
 // #endregion
-// #region functions
+// #region events
 window.addEventListener('load', () => {
   const content = document.getElementById('content')
   content.innerHTML = pageIndex
   if (content) {
     categoriasList = document.getElementById('categorias')
     productosList = document.getElementById('productos')
-    buttons = document.getElementById('categorias')
     addButtons(data)
-    // #region event
-    buttons.addEventListener('click', (e) => {
+    categoriasList.addEventListener('click', (e) => {
       setupProducts(parseInt(e.target.value))
     })
-    // #endregion
   }
 })
+// #endregion
 
+// #region functions
 const addButtons = (data) => {
   if (data.length) {
     data.forEach((data) => {
@@ -44,13 +41,13 @@ const setupProducts = (id) => {
     productosList.innerHTML = dataCategory.productos.map((producto) => {
       return `
       <div class="cards">
-      <img
-      src="https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_helmet_1185318_480x854.jpg"
-      alt=""
-      />
-      <h3 class="title">${producto.nombre}</h3>
-      <p>${producto.descripcion}</p>
-      <button class="btn-white btn-xs">COMPRAR</button>
+        <img
+        src="https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_helmet_1185318_480x854.jpg"
+        alt=""
+        />
+        <h3 class="title">${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <button class="btn-white btn-xs">COMPRAR</button>
       </div>
       `
     })

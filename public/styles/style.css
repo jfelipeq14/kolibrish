@@ -217,6 +217,9 @@ header#categorias {
   overscroll-behavior: contain;
 }
 article#productos {
+  height: 600px;
+  margin: 0 auto;
+  width: fit-content;
   overflow-y: scroll;
   overscroll-behavior: contain;
 }

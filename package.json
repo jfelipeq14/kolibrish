@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "npm install"
+    "start": "npm i",
+    "git": "git pull origin develop"
   },
   "keywords": [],
   "author": "jfelipeq14",
