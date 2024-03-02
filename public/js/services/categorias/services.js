@@ -1,5 +1,24 @@
 import { getData } from '../general/getData.js'
+import { pageCategory } from '../../screens/categorias.js'
+import { pageProductos } from '../../screens/productos.js'
 const tableProductos = document.getElementById('table-content')
+const btnCategorias = document.getElementById('btnCategorias')
+const btnProductos = document.getElementById('btnProductos')
+
+btnCategorias.addEventListener('click', () => {
+  const content = document.getElementById('content')
+  content.innerHTML = pageCategory
+  if (content) {
+    tableProductos = document.getElementById('table-content')
+  }
+})
+btnProductos.addEventListener('click', () => {
+  const content = document.getElementById('content')
+  content.innerHTML = pageProductos
+  if (content) {
+    tableProductos = document.getElementById('table-content')
+  }
+})
 
 window.addEventListener('load', async () => {
   await getData('categorias').then((data) => {

@@ -1,93 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kolibrish</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
-  <body>
-    <nav>
-      <img src="#" alt="Logo" />
-      <ul>
-        <li>
-          <button class="btn-sm" id="btnCategorias">
-            <a href="#categorias">CATEGORIAS</a>
-          </button>
-        </li>
-        <li>
-          <button class="btn-sm" id="btnProductos">
-            <a href="#categorias">PRODUCTOS</a>
-          </button>
-        </li>
-        <li>
-          <button class="btn-sm">
-            <a href="#footer">CONTACTO</a>
-          </button>
-        </li>
-        <li>
-          <button class="d-block btn-sm btn-blue" id="login">LOGIN</button>
-          <button class="d-none btn-sm btn-blue" id="logout">LOGOUT</button>
-        </li>
-      </ul>
-    </nav>
-    <dialog id="pop-up">
-      <button id="hiddenPopup" class="btn-icon close btn-blue">X</button>
-      <h3>Iniciar sesión</h3>
-      <form id="login-form">
-        <label>
-          <input
-            type="email"
-            id="login-email"
-            placeholder="kolibrish@company.co"
-            required /></label
-        ><label class="password">
-          <input
-            type="password"
-            id="login-password"
-            placeholder="************"
-            required
-        /></label>
-        <div class="buttons">
-          <button type="submit" class="btn-sm btn-blue">Ingresar</button>
-        </div>
-      </form>
-    </dialog>
-    <main id="content"></main>
-    <footer class="d-flex" id="footer">
-      <article>
-        <h3>CONTÁCTANOS</h3>
-      </article>
-      <article>
-        <div>
-          <h4>Ubicación</h4>
-          <ul>
-            <li>Calle 0 #00-00</li>
-            <li>Medellin - Antioquia</li>
-          </ul>
-        </div>
-        <div>
-          <h4>redes sociales</h4>
-          <ul>
-            <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer"
-                >Facebook</a
-              >
-            </li>
-            <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">X</a>
-            </li>
-          </ul>
-        </div>
-        <a href="mailto:kolibrish@company.com.co">kolibrish@company.com.co</a>
-      </article>
-    </footer>
-    <script src="./js/main.js" type="module"></script>
-    <script src="./js/helper/showModal.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolibrish</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <nav>
+    <img src="#" alt="Logo" />
+    <ul>
+      <li>
+        <button class="btn-sm" id="btnCategorias">
+          <a href="#categorias">CATEGORIAS</a>
+        </button>
+      </li>
+      <li>
+        <button class="btn-sm" id="btnProductos">
+          <a href="#productos">PRODUCTOS</a>
+        </button>
+      </li>
+      <li>
+        <button class="btn-sm">
+          <a href="#footer">CONTACTO</a>
+        </button>
+      </li>
+      <li>
+        <button class="d-block btn-sm btn-blue" id="login">LOGIN</button>
+        <button class="d-none btn-sm btn-blue" id="logout">LOGOUT</button>
+      </li>
+    </ul>
+  </nav>
+  <dialog id="pop-up">
+    <button id="hiddenPopup" class="btn-icon close btn-blue">X</button>
+    <h3>Iniciar sesión</h3>
+    <form id="login-form">
+      <label>
+        <input type="email" id="login-email" placeholder="kolibrish@company.co" required /></label><label
+        class="password">
+        <input type="password" id="login-password" placeholder="************" required /></label>
+      <div class="buttons">
+        <button type="submit" class="btn-sm btn-blue">Ingresar</button>
+      </div>
+    </form>
+  </dialog>
+  <main id="content"></main>
+  <footer class="d-flex" id="footer">
+    <article>
+      <h3>CONTÁCTANOS</h3>
+    </article>
+    <article>
+      <div>
+        <h4>Ubicación</h4>
+        <ul>
+          <li>Calle 0 #00-00</li>
+          <li>Medellin - Antioquia</li>
+        </ul>
+      </div>
+      <div>
+        <h4>redes sociales</h4>
+        <ul>
+          <li>
+            <a href="http://" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </li>
+          <li>
+            <a href="http://" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </li>
+          <li>
+            <a href="http://" target="_blank" rel="noopener noreferrer">X</a>
+          </li>
+        </ul>
+      </div>
+      <a href="mailto:kolibrish@company.com.co">kolibrish@company.com.co</a>
+    </article>
+  </footer>
+  <script src="./js/main.js" type="module"></script>
+  <script src="./js/helper/showModal.js"></script>
+</body>
+
 </html>
