@@ -11,6 +11,12 @@ import {
 //   productos: []
 // }
 
-export const setData = async (stringNameCollection, jsonData) => {
+export const setDataCollection = async (stringNameCollection, jsonData) => {
   await setDoc(doc(db, stringNameCollection, jsonData.nombre), jsonData)
+}
+
+export const setDataForArray = async (stringNameCollection, arrayData) => {
+  // obtener los datos de esa coleccion
+  // crear una variable con los array
+  // agregar los datos nuevos al array que trae la db
 }
