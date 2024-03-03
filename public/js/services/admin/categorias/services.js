@@ -1,17 +1,7 @@
 import { getData } from '../../general/getData.js'
-import { pageCategory } from '../../screens/categorias.js'
-const btnCategorias = document.getElementById('btnCategorias')
 let tableCategorias
 
-btnCategorias.addEventListener('click', () => {
-  const content = document.getElementById('content')
-  content.innerHTML = pageCategory
-  if (content) {
-    tableCategorias = document.getElementById('table-content')
-  }
-})
-
-window.addEventListener('load', async () => {
+export const loadTableCategory = async () => {
   await getData('categorias').then((data) => {
     let html = ''
     data.forEach((data) => {
@@ -30,4 +20,4 @@ window.addEventListener('load', async () => {
       console.log(newdata)
     })
   })
-})
+}

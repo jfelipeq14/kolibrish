@@ -3,6 +3,9 @@ import { pageAdmin } from './page.js'
 // #region // logout user
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
+import { pageCategory } from './categorias/page.js'
+
+let btnCategorias
 
 let modules
 let logout
@@ -15,7 +18,7 @@ export const loadAdminPage = () => {
   if (content) {
     modules = document.getElementById('modules')
     logout = document.getElementById('logout')
-
+    btnCategorias = document.getElementById('btnCategorias')
     addModules(data)
     logout.addEventListener('click', async (e) => {
       try {
@@ -24,6 +27,10 @@ export const loadAdminPage = () => {
       } catch (error) {
         console.log(error)
       }
+    })
+    btnCategorias.addEventListener('click', () => {
+      const content = document.getElementById('content')
+      content.innerHTML = pageCategory
     })
   }
 }
