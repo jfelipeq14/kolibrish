@@ -1,5 +1,4 @@
 import { data } from '../crud/data.js'
-import { pageProductos } from './page.js'
 
 // #region atributos
 const listProductos = []

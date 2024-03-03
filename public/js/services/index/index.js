@@ -16,6 +16,7 @@ let dialog
 let login
 let hiddenPopup
 let signInForm
+let body
 
 // #endregion
 // #region events
@@ -23,6 +24,7 @@ export const loadIndex = () => {
   const content = document.getElementById('body')
   content.innerHTML += pageIndex
   if (content) {
+    body = document.getElementById('body')
     categoriasList = document.getElementById('categorias')
     productosList = document.getElementById('productos')
     dialog = document.getElementById('pop-up')
@@ -51,7 +53,6 @@ export const loadIndex = () => {
           email,
           password
         )
-        console.log('Evento: ', user) // no entra
       } catch (error) {
         if (error.code === 'auth/wrong-password') {
           console.log('Wrong password', 'error')
@@ -62,6 +63,7 @@ export const loadIndex = () => {
         }
       }
     })
+    body.classList.add('bg-linear')
   }
 }
 // #endregion

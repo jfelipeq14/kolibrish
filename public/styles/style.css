@@ -22,8 +22,8 @@
   text-transform: uppercase;
 }
 
-body {
-  background-image: linear-gradient(90deg, var(--purple) 0%, var(--blue) 100%);
+.bg-linear {
+  background-image: linear-gradient(90deg, var(--blue) 0%, var(--fucsia) 100%);
 }
 
 h1,

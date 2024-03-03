@@ -10,6 +10,7 @@ let btnCategorias
 let btnProductos
 let modules
 let logout
+let body
 
 const data = [{ nombre: 'nombre', img: 'url', descripcion: 'lo que sea' }]
 
@@ -17,6 +18,7 @@ export const loadAdminPage = () => {
   const content = document.getElementById('body')
   content.innerHTML = pageAdmin
   if (content) {
+    body = document.getElementById('body')
     modules = document.getElementById('modules')
     logout = document.getElementById('logout')
     btnCategorias = document.getElementById('btnCategorias')
@@ -39,6 +41,7 @@ export const loadAdminPage = () => {
       const content = document.getElementById('content')
       content.innerHTML = pageProductos
     })
+    body.classList.remove('bg-linear')
   }
 }
 
