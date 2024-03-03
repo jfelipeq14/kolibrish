@@ -1,4 +1,4 @@
-import { getData } from '../general/getData.js'
+import { getData } from '../../general/getData.js'
 import { pageCategory } from '../../screens/categorias.js'
 const btnCategorias = document.getElementById('btnCategorias')
 let tableCategorias

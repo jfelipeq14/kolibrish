@@ -7,20 +7,34 @@ const listProductos = []
 let categoriasList
 let productosList
 let dataCategory
+let dialog
+let login
+let hiddenPopup
 // #endregion
 // #region events
 window.addEventListener('load', () => {
-  const content = document.getElementById('content')
-  content.innerHTML = pageIndex
+  const content = document.getElementById('body')
+  content.innerHTML += pageIndex
   if (content) {
     categoriasList = document.getElementById('categorias')
     productosList = document.getElementById('productos')
+    dialog = document.getElementById('pop-up')
+    login = document.getElementById('login')
+    hiddenPopup = document.getElementById('hiddenPopup')
     addButtons(data)
     categoriasList.addEventListener('click', (e) => {
       setupProducts(parseInt(e.target.value))
     })
+    login.addEventListener('click', () => {
+      dialog.showModal()
+    })
+
+    hiddenPopup.addEventListener('click', () => {
+      dialog.close()
+    })
   }
 })
+
 // #endregion
 
 // #region functions

@@ -405,26 +405,4 @@ img{
 /* pagina de admin */
 picture img{
   width: 85px;
-  height: 85px;
-}
-section article{
-  cursor: pointer;
-  width: 230px;
-  height: 230px;
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  padding: 15px 0px;
-  font-size: x-large; 
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--blue);
-  border: var(--border);
-  border-radius: var(--radius);
-  -webkit-border-radius: var(--radius);
-  -moz-border-radius: var(--radius);
-  -ms-border-radius: var(--radius);
-  -o-border-radius: var(--radius);
 }

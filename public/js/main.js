@@ -7,7 +7,6 @@ import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/fi
 import { loginCheck } from './services/auth/loginCheck.js'
 import { auth } from './config/firebase.js'
 import './services/auth/signinForm.js'
-import './services/auth/logout.js'
 import './services/index/index.js'
 // #endregion
 // #region functions
