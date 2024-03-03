@@ -1,10 +1,13 @@
-// const dialog = document.getElementById('pop-up')
+import { loadAdminPage } from '../admin/service.js'
+
+const dialog = document.getElementById('pop-up')
 // #endregion
 
 // #region funciones
 export const loginCheck = (user) => {
   if (user) {
-    console.log(user)
+    loadAdminPage()
+    dialog.close()
   } else {
     console.error('error')
   }

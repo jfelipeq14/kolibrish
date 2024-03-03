@@ -2,6 +2,11 @@
 import { searchById } from '../../services/general/search.js'
 import { data } from '../../services/general/local/data.js'
 import { pageIndex } from './page.js'
+import '../auth/signinForm.js'
+// #endregion
+// #region atributos
+import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
+import { auth } from '../../config/firebase.js'
 
 const listProductos = []
 let categoriasList
@@ -10,9 +15,11 @@ let dataCategory
 let dialog
 let login
 let hiddenPopup
+let signInForm
+
 // #endregion
 // #region events
-window.addEventListener('load', () => {
+export const loadIndex = () => {
   const content = document.getElementById('body')
   content.innerHTML += pageIndex
   if (content) {
@@ -21,6 +28,7 @@ window.addEventListener('load', () => {
     dialog = document.getElementById('pop-up')
     login = document.getElementById('login')
     hiddenPopup = document.getElementById('hiddenPopup')
+    signInForm = document.getElementById('signInForm')
     addButtons(data)
     categoriasList.addEventListener('click', (e) => {
       setupProducts(parseInt(e.target.value))
@@ -32,9 +40,30 @@ window.addEventListener('load', () => {
     hiddenPopup.addEventListener('click', () => {
       dialog.close()
     })
-  }
-})
+    signInForm.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const email = signInForm['login-email'].value
+      const password = signInForm['login-password'].value
 
+      try {
+        const user = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        )
+        console.log('Evento: ', user) // no entra
+      } catch (error) {
+        if (error.code === 'auth/wrong-password') {
+          console.log('Wrong password', 'error')
+        } else if (error.code === 'auth/user-not-found') {
+          console.log('User not found', 'error')
+        } else {
+          console.log('Something went wrong', 'error')
+        }
+      }
+    })
+  }
+}
 // #endregion
 
 // #region functions
@@ -67,4 +96,5 @@ const setupProducts = (id) => {
     })
   }
 }
+
 // #endregion

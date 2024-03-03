@@ -2,27 +2,25 @@
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
 
-const signInForm = document.querySelector('#login-form')
+const signInForm = document.getElementById('signInForm')
 // #endregion
+// #region functions
 
+// #endregion
 // #region events
 signInForm.addEventListener('submit', async (e) => {
-  console.log(e)
-  e.preventDefault() // evitar que la pagina se recargue
-  // atributos del formulario
+  e.preventDefault()
   const email = signInForm['login-email'].value
   const password = signInForm['login-password'].value
 
-  // envia las credenciales al back
   try {
-    const userCredentials = await signInWithEmailAndPassword(
+    const user = await signInWithEmailAndPassword(
       auth,
       email,
       password
     )
-    console.log(userCredentials)
+    console.log(user) // no entra
   } catch (error) {
-    // error en caso de que losdatos esten incorrecto o el usuario no exista
     if (error.code === 'auth/wrong-password') {
       console.log('Wrong password', 'error')
     } else if (error.code === 'auth/user-not-found') {
