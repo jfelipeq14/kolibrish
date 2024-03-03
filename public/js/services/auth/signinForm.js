@@ -7,6 +7,7 @@ const signInForm = document.querySelector('#login-form')
 
 // #region events
 signInForm.addEventListener('submit', async (e) => {
+  console.log(e)
   e.preventDefault() // evitar que la pagina se recargue
   // atributos del formulario
   const email = signInForm['login-email'].value

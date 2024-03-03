@@ -11,8 +11,9 @@ import './services/index/index.js'
 // #endregion
 // #region functions
 // -------- TODAS LAS FUNCIONES VAN ACA SIN ESTE COMENTARIO --------
-onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(auth, (user) => {
   if (user) {
+    console.log(user)
     try {
       loginCheck(user)
     } catch (error) {

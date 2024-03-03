@@ -1,18 +1,17 @@
-import { pageAdmin } from './page'
+import { pageAdmin } from './page.js'
 
 let modules
-let data
 
-window.addEventListener('load', () => {
+export const loadPage = () => {
   const content = document.getElementById('body')
   content.innerHTML = pageAdmin
-  if (content) {
-    modules = document.getElementById('modules')
-    addModules(data)
-  }
-})
+  // if (content) {
+  // modules = document.getElementById('modules')
+  // addModules(data)
+  // }
+}
 
-const addModules = (data) => {
+export const addModules = (data) => {
   if (data.length) {
     data.forEach((data) => {
       modules.innerHTML += `
