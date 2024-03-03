@@ -1,10 +1,21 @@
 import { data } from '../crud/data.js'
+import { pageProductos } from './page.js'
 
 // #region atributos
-const categorias = document.getElementById('categorias')
-const productosTable = document.getElementById('table-content')
+const btnProductos = document.getElementById('btnProductos')
 const listProductos = []
+let productosTable
+let categorias
 let validData
+
+btnProductos.addEventListener('click', () => {
+  const content = document.getElementById('content')
+  content.innerHTML = pageProductos
+  if (content) {
+    productosTable = document.getElementById('table-content')
+    categorias = document.getElementById('categorias')
+  }
+})
 // #endregion
 
 // #region functions

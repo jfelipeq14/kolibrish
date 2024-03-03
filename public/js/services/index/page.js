@@ -1,5 +1,5 @@
 export const pageIndex = [
-  '<section id="main" class="d-flex">',
+  '<section class="d-flex">',
   '<article>',
   '<h1 class="title">NUEVO PRODUCTO</h1>',
   '</article>',

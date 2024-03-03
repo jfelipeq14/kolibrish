@@ -7,7 +7,10 @@
   --shadow: 0 0 15px 4px #00000020;
   accent-color: #24bae4;
 }
-* {
+
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -18,14 +21,11 @@
   font-family: sans-serif;
   text-transform: uppercase;
 }
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+
 body {
   background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
+
 h1,
 h2,
 h3,
@@ -40,20 +40,24 @@ h6 {
   text-align: start;
   color: white;
 }
+
 nav {
-  width: 100vw;
-  display: flex;
+  max-width: 100vw;
   padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
   height: fit-content;
+  background: transparent;
   justify-content: space-between;
-  background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
 }
 nav ul {
   gap: 30px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 section {
   width: 100vw;
   height: 100vh;
@@ -61,6 +65,7 @@ section {
   align-items: center;
   justify-content: center;
 }
+
 dialog {
   width: 400px;
   margin: auto auto;
@@ -90,9 +95,10 @@ dialog label input {
   justify-content: center;
 }
 dialog::backdrop {
-  backdrop-filter: blur(8px);
-  background-color: #00000082;
+  backdrop-filter: blur(10px);
+  background-color: #00000098;
 }
+
 input,
 select,
 textarea {
@@ -103,7 +109,6 @@ textarea {
   margin: 0 60px;
   padding: 0 12px;
   text-wrap: balance;
-  /* max-inline-size: 25ch; */
   border: var(--border);
   border-radius: 6px;
   -o-border-radius: 6px;
@@ -124,6 +129,7 @@ textarea:focus {
   outline: 1px solid var(--blue);
   background-color: transparent;
 }
+
 button,
 button a {
   border: none;
@@ -200,6 +206,7 @@ button a:hover {
   cursor: pointer;
   position: absolute;
 }
+
 .d-none {
   display: none;
 }
@@ -208,35 +215,26 @@ button a:hover {
 }
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 .d-grid {
   display: grid;
 }
+
 header#categorias {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
   overflow-x: scroll;
   overscroll-behavior: contain;
 }
 article#productos {
-  height: 600px;
+  height: 700px;
   margin: 0 auto;
   width: fit-content;
   overflow-y: scroll;
   overscroll-behavior: contain;
-}
-.card {
-  display: inline-block;
-  width: 12rem;
-  height: auto;
-  margin: 0 auto;
-  padding: 12px 0;
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  -o-border-radius: var(--radius);
-  -ms-border-radius: var(--radius);
-  -moz-border-radius: var(--radius);
-  -webkit-border-radius: var(--radius);
-  background-image: url();
-  align-items: center;
+  justify-content: center;
 }
 footer {
   width: 100vw;
@@ -245,10 +243,12 @@ footer {
   color: var(--purple);
 }
 footer article {
-  width: 50vw;
+  /* width: 50vw; */
   display: grid;
   text-align: start;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 0 auto;
 }
 footer article h3 {
   margin: 30px auto;
@@ -339,47 +339,50 @@ td {
 }
 
 /* creacion de las cards */
-
 #productos {
+  margin: 0 auto;
   display: flex;
-  padding: 100px;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .cards {
-  width: 354px;
-  height: 400px;
-  position: relative;
+  width: 15rem;
+  height: 20rem;
+  padding: 1rem;
+  margin: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: 0.5s;
-  margin-top: 30px;
-  gap: 8px;
-  border: 1px solid #ccc;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 7px;
   text-align: start;
+  position: relative;
+  border: var(--border);
+  flex-direction: column;
+  background-size: cover;
+  justify-content: flex-end;
+  background-repeat: no-repeat;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  -o-border-radius: var(--radius);
+  -ms-border-radius: var(--radius);
+  -moz-border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
 }
 
 .cards img {
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  object-fit: cover;
   top: 0;
   left: 0;
   right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
 }
 
 .cards:hover {
-  background: linear-gradient(180deg, #00000020 5%, #00000082 80%);
+  background: linear-gradient(180deg, #00000050 5%, #000000 80%);
 }
 
 .cards h3 {
-  font-size: x-large;
+  font-size: large;
 }
 
 section article div h3,
