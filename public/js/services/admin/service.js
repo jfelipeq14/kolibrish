@@ -4,9 +4,10 @@ import { pageAdmin } from './page.js'
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
 import { pageCategory } from './categorias/page.js'
+import { pageProductos } from './productos/page.js'
 
 let btnCategorias
-
+let btnProductos
 let modules
 let logout
 
@@ -19,6 +20,8 @@ export const loadAdminPage = () => {
     modules = document.getElementById('modules')
     logout = document.getElementById('logout')
     btnCategorias = document.getElementById('btnCategorias')
+    btnProductos = document.getElementById('btnProductos')
+
     addModules(data)
     logout.addEventListener('click', async (e) => {
       try {
@@ -31,6 +34,10 @@ export const loadAdminPage = () => {
     btnCategorias.addEventListener('click', () => {
       const content = document.getElementById('content')
       content.innerHTML = pageCategory
+    })
+    btnProductos.addEventListener('click', () => {
+      const content = document.getElementById('content')
+      content.innerHTML = pageProductos
     })
   }
 }
