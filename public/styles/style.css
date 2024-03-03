@@ -23,7 +23,7 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, var(--blue) 0%, var(--purple) 100%);
+  background-image: linear-gradient(90deg, var(--purple) 0%, var(--blue) 100%);
 }
 
 h1,
@@ -388,13 +388,40 @@ td {
 section article div h3,
 p,
 span {
-  display: flex;
   padding: 7px;
-  align-items: flex-end;
+  display: flex;
   color: white;
+  align-items: flex-end;
 }
 
 img{
+  border-radius: var(--radius);
+  -o-border-radius: var(--radius);
+  -ms-border-radius: var(--radius);
+  -moz-border-radius: var(--radius);
+  -webkit-border-radius: var(--radius);
+}
+
+/* pagina de admin */
+picture img{
+  width: 85px;
+  height: 85px;
+}
+section article{
+  cursor: pointer;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 15px 0px;
+  font-size: x-large; 
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--blue);
+  border: var(--border);
   border-radius: var(--radius);
   -webkit-border-radius: var(--radius);
   -moz-border-radius: var(--radius);
