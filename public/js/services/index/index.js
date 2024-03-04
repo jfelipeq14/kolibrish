@@ -1,40 +1,40 @@
 // #region atributos
 import { searchById } from '../../services/general/search.js'
-import { data } from '../../services/general/local/data.js'
 import { pageIndex } from './page.js'
 import '../auth/signinForm.js'
-// #endregion
-// #region atributos
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
+import { getData } from '../general/getData.js'
 
 const listProductos = []
 let categoriasList
 let productosList
 let dataCategory
-let dialog
-let login
 let hiddenPopup
 let signInForm
+let dialog
+let login
 let body
-
 // #endregion
 // #region events
-export const loadIndex = () => {
+export const loadIndex = async () => {
   const content = document.getElementById('body')
   content.innerHTML += pageIndex
   if (content) {
-    body = document.getElementById('body')
     categoriasList = document.getElementById('categorias')
     productosList = document.getElementById('productos')
-    dialog = document.getElementById('pop-up')
-    login = document.getElementById('login')
     hiddenPopup = document.getElementById('hiddenPopup')
     signInForm = document.getElementById('signInForm')
-    addButtons(data)
+    dialog = document.getElementById('pop-up')
+    login = document.getElementById('login')
+    body = document.getElementById('body')
+
+    addButtons()
+
     categoriasList.addEventListener('click', (e) => {
-      setupProducts(parseInt(e.target.value))
+      setupProducts(e.target.value)
     })
+
     login.addEventListener('click', () => {
       dialog.showModal()
     })
@@ -53,6 +53,7 @@ export const loadIndex = () => {
           email,
           password
         )
+        console.log(user)
       } catch (error) {
         if (error.code === 'auth/wrong-password') {
           console.log('Wrong password', 'error')
@@ -69,15 +70,16 @@ export const loadIndex = () => {
 // #endregion
 
 // #region functions
-const addButtons = (data) => {
-  if (data.length) {
+
+const addButtons = () => {
+  getData('categorias').then((data) => {
     data.forEach((data) => {
       categoriasList.innerHTML += `
-      <button value="${data.id}" class="btn-sm btn-fucsia">${data.nombre}</button>
-      `
+        <button value="${data.id}" class="btn-sm btn-fucsia">${data.nombre}</button>
+        `
       listProductos.push({ id: data.id, productos: data.productos })
     })
-  }
+  })
 }
 
 const setupProducts = (id) => {
@@ -87,8 +89,8 @@ const setupProducts = (id) => {
       return `
       <div class="cards">
         <img
-        src="https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_helmet_1185318_480x854.jpg"
-        alt=""
+        src="${producto.url}"
+        alt="${producto.descripcion}"
         />
         <h3 class="title">${producto.nombre}</h3>
         <p>${producto.descripcion}</p>

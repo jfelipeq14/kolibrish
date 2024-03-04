@@ -3,17 +3,18 @@ import {
   doc,
   setDoc
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js'
-
-// modelForCategory
-// const jsondata = {
-//   id: myuuid,
-//   nombre: 'pantalones',
-//   productos: []
-// }
+// import { data } from './local/data.js'
 
 export const setDataCollection = async (stringNameCollection, jsonData) => {
   await setDoc(doc(db, stringNameCollection, jsonData.nombre), jsonData)
 }
+
+// (() => {
+//   for (let i = 0; i < data.length; i++) {
+//     const element = data[i]
+//     setDataCollection('categorias', element)
+//   }
+// })()
 
 export const setDataForArray = async (stringNameCollection, arrayData) => {
   // obtener los datos de esa coleccion
