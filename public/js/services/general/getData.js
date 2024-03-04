@@ -14,5 +14,5 @@ export const getData = async (nameCollection) => {
       })
     }
   }
-  return data
+  return data // Devuelve toda la informacion que encontró en un array
 }

@@ -1,10 +1,10 @@
 // #region atributos
+import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { searchById } from '../../services/general/search.js'
+import { getData } from '../general/getData.js'
+import { auth } from '../../config/firebase.js'
 import { pageIndex } from './page.js'
 import '../auth/signinForm.js'
-import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
-import { auth } from '../../config/firebase.js'
-import { getData } from '../general/getData.js'
 
 const listProductos = []
 let categoriasList

@@ -14,7 +14,7 @@ export const setDataCollection = async (stringNameCollection, jsonData) => {
 //     const element = data[i]
 //     setDataCollection('categorias', element)
 //   }
-// })()
+// })() // Enviar datos a la base de datos
 
 export const setDataForArray = async (stringNameCollection, arrayData) => {
   // obtener los datos de esa coleccion

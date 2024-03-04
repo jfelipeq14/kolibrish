@@ -5,12 +5,14 @@ import { signOut } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth
 import { auth } from '../../config/firebase.js'
 import { pageCategory } from './categorias/page.js'
 import { pageProductos } from './productos/page.js'
+import { loadTableCategorias } from './categorias/services.js'
 
 let btnCategorias
 let btnProductos
 let modules
 let logout
 let body
+let table
 
 const data = [{ nombre: 'nombre', img: 'url', descripcion: 'lo que sea' }]
 
@@ -25,6 +27,7 @@ export const loadAdminPage = () => {
     btnProductos = document.getElementById('btnProductos')
 
     addModules(data)
+
     logout.addEventListener('click', async (e) => {
       try {
         await signOut(auth)
@@ -33,9 +36,14 @@ export const loadAdminPage = () => {
         console.log(error)
       }
     })
+
     btnCategorias.addEventListener('click', () => {
       const content = document.getElementById('content')
       content.innerHTML = pageCategory
+      if (content) {
+        table = document.getElementById('table-content')
+        loadTableCategorias(table)
+      }
     })
     btnProductos.addEventListener('click', () => {
       const content = document.getElementById('content')

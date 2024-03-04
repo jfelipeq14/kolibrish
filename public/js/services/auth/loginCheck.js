@@ -6,10 +6,8 @@ const dialog = document.getElementById('pop-up')
 // #region funciones
 export const loginCheck = (user) => {
   if (user) {
-    loadAdminPage()
-    dialog.close()
-  } else {
-    console.error('error')
+    loadAdminPage() // Si existe un usuario va a cargar la pagina de admin
+    dialog.close() // Cierra el modal aunque igual no aparece más
   }
 }
 // #endregion

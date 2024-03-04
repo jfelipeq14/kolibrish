@@ -31,5 +31,5 @@ export const pageCategory = [
   '</fieldset>',
   '</article>',
   '</section>',
-  '<script src="../js/services/categorias/services.js" type="module"></script>'
+  '<script src="./js/services/admin/categorias/services.js" type="module"></script>'
 ].join('')
