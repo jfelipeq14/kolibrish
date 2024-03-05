@@ -1,6 +1,6 @@
 // Datos locales
 
-export const data = [
+export const localData = [
   {
     id: crypto.randomUUID(),
     nombre: 'Faldas',

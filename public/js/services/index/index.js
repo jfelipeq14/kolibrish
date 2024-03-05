@@ -1,9 +1,8 @@
 // #region atributos
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
-import { searchById } from '../../services/general/search.js'
-import { getData } from '../general/getData.js'
 import { auth } from '../../config/firebase.js'
-import { pageIndex } from './page.js'
+import { getAllData } from '../services.general.js'
+import { pageIndex } from './pageIndex.js'
 import '../auth/signinForm.js'
 
 const listProductos = []
@@ -42,6 +41,7 @@ export const loadIndex = async () => {
     hiddenPopup.addEventListener('click', () => {
       dialog.close()
     })
+
     signInForm.addEventListener('submit', async (e) => {
       e.preventDefault()
       const email = signInForm['login-email'].value
@@ -71,19 +71,19 @@ export const loadIndex = async () => {
 
 // #region functions
 
-const addButtons = () => {
-  getData('categorias').then((data) => {
-    data.forEach((data) => {
-      categoriasList.innerHTML += `
-        <button value="${data.id}" class="btn-sm btn-fucsia">${data.nombre}</button>
-        `
-      listProductos.push({ id: data.id, productos: data.productos })
-    })
+const addButtons = async () => {
+  const data = await getAllData('categorias')
+  data.forEach((element) => {
+    const category = element.data()
+    categoriasList.innerHTML += `
+      <button value="${category.id}" class="btn-sm btn-fucsia">${category.nombre}</button>
+      `
+    listProductos.push({ id: category.id, productos: category.productos })
   })
 }
 
-const setupProducts = (id) => {
-  dataCategory = searchById(id, listProductos)
+const setupProducts = async (id) => {
+  dataCategory = listProductos.find((producto) => producto.id === id)
   if (dataCategory) {
     productosList.innerHTML = dataCategory.productos.map((producto) => {
       return `
@@ -94,11 +94,11 @@ const setupProducts = (id) => {
         />
         <h3 class="title">${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
-        <button class="btn-white btn-xs">COMPRAR</button>
+        
       </div>
       `
+      // <button class="btn-white btn-xs">COMPRAR</button>
     })
   }
 }
-
 // #endregion

@@ -1,12 +1,14 @@
 // #region atributos
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { auth } from '../../config/firebase.js'
+
 // elementos del DOM
 const signInForm = document.getElementById('signInForm')
+
 // #endregion
 // #region events
 signInForm.addEventListener('submit', async (e) => {
-  e.preventDefault() // Evita que la pagina recargue
+  e.preventDefault()
   const email = signInForm['login-email'].value
   const password = signInForm['login-password'].value
 
@@ -15,8 +17,8 @@ signInForm.addEventListener('submit', async (e) => {
       auth,
       email,
       password
-    ) // Envia los datos del formulario
-    console.log(user) // Muestra el usuario
+    )
+    console.log(user)
   } catch (error) {
     // mensajes de error
     if (error.code === 'auth/wrong-password') {

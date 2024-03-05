@@ -1,4 +1,4 @@
-import { loadAdminPage } from '../admin/service.js'
+import { loadAdminPage } from '../admin/service.admin.js'
 
 const dialog = document.getElementById('pop-up')
 // #endregion

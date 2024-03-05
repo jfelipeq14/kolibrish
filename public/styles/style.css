@@ -102,12 +102,13 @@ dialog::backdrop {
 input,
 select,
 textarea {
-  width: 310px;
   height: 40px;
+  max-width: 310px;
+  min-width: 310px;
   color: black;
   display: block;
-  margin: 0 60px;
-  padding: 0 12px;
+  margin: 0 0 0 60px;
+  padding: 12px;
   text-wrap: balance;
   border: var(--border);
   border-radius: 6px;
@@ -222,56 +223,56 @@ button a:hover {
 }
 
 header#categorias {
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   width: fit-content;
+  align-items: center;
   height: fit-content;
   overflow-x: scroll;
+  justify-content: center;
   overscroll-behavior: contain;
 }
 article#productos {
   height: 700px;
   margin: 0 auto;
-  width: fit-content;
   overflow-y: scroll;
   overscroll-behavior: contain;
   justify-content: center;
 }
+
 footer {
-  width: 100vw;
-  height: fit-content;
   align-items: start;
   color: var(--purple);
+  background: transparent;
+  backdrop-filter: blur(10px);
 }
+
 footer article {
-  /* width: 50vw; */
   display: grid;
+  margin: 0 auto;
   text-align: start;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  margin: 0 auto;
 }
-footer article h3 {
-  margin: 30px auto;
-}
+
 footer article div h4 {
-  margin: 30px auto;
   font-size: x-large;
   color: var(--blue);
 }
+
 footer article div ul,
 footer article div ul li a {
   color: white;
-  font-size: large;
+  font-size: medium;
 }
+
 footer article a {
-  margin: 30px 0;
   color: var(--blue);
   text-decoration: none;
 }
 /* pantalla de productos */
-/* body {
-  background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
-} */
 fieldset {
   border: none;
   display: grid;
@@ -405,4 +406,11 @@ img{
 /* pagina de admin */
 picture img{
   width: 85px;
+}
+
+section#modules{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }

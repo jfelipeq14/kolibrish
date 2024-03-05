@@ -16,7 +16,7 @@ export const pageAdmin = [
   '</ul>',
   '</nav>',
   '<main id="content">',
-  '<section class="d-flex" id="modules">',
+  '<section id="modules">',
   '</section>',
   '</main>'
 ].join('')
