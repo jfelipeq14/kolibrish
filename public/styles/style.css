@@ -234,6 +234,7 @@ header#categorias {
   justify-content: center;
   overscroll-behavior: contain;
 }
+
 article#productos {
   height: 700px;
   margin: 0 auto;
@@ -272,7 +273,7 @@ footer article a {
   color: var(--blue);
   text-decoration: none;
 }
-/* pantalla de productos */
+
 fieldset {
   border: none;
   display: grid;
@@ -294,9 +295,9 @@ label {
   grid-template-columns: 80px 1fr;
 }
 input[type="file"] {
-  margin: auto 30px;
-  max-width: 145px;
   height: 190px;
+  max-width: 145px;
+  margin: auto 30px;
 }
 label img {
   position: static;

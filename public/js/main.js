@@ -7,10 +7,10 @@ import { auth } from './config/firebase.js'
 
 // #region functions
 onAuthStateChanged(auth, (user) => {
-  loadIndex() // Cargar el index
+  loadIndex()
   if (user) {
     try {
-      loginCheck(user) // Verificar el usuario
+      loginCheck(user)
     } catch (error) {
       console.error(error)
     }

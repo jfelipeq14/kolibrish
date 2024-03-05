@@ -94,7 +94,6 @@ const setupProducts = async (id) => {
         />
         <h3 class="title">${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
-        
       </div>
       `
       // <button class="btn-white btn-xs">COMPRAR</button>

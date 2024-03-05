@@ -5,8 +5,9 @@ import { auth } from '../../config/firebase.js'
 import { pageCategory } from './categorias/pageCategory.js'
 import { pageProductos } from './productos/pageProducts.js'
 import { loadTableCategorias } from './categorias/services.category.js'
-import { getAllData } from '../services.general.js'
+// import { getAllData } from '../services.general.js'
 import { loadCategorys, loadProducts } from './productos/services.products.js'
+import { localData } from '../local/localData.js'
 
 let btnCategorias
 let btnProductos
@@ -15,8 +16,9 @@ let modules
 let logout
 let body
 let table
-let data
+const data = localData
 let products = []
+let dataModules
 
 export const loadAdminPage = async () => {
   const content = document.getElementById('body')
@@ -30,7 +32,7 @@ export const loadAdminPage = async () => {
 
     body.classList.remove('bg-linear')
     // data = await getAllData('modulos')
-    data = [{
+    dataModules = [{
       nombre: 'Categorias',
       descripcion: 'lo que sea',
       img: 'enlace'
@@ -40,7 +42,7 @@ export const loadAdminPage = async () => {
       img: 'enlace'
     }]
 
-    data.forEach((doc) => {
+    dataModules.forEach((doc) => {
       // const doc = element.data()
       modules.innerHTML += `
       <article>
@@ -76,8 +78,8 @@ export const loadAdminPage = async () => {
       if (content) {
         categorias = document.getElementById('categorias')
         table = document.getElementById('table-content')
-        const categorys = await getAllData('categorias')
-        products = loadCategorys(categorys, categorias)
+        // const categorys = await getAllData('categorias')
+        products = loadCategorys(data, categorias)
 
         categorias.addEventListener('change', (e) => {
           loadProducts(e.target.value, products, table)
