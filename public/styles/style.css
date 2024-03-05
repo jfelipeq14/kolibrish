@@ -107,7 +107,7 @@ textarea {
   min-width: 310px;
   color: black;
   display: block;
-  margin: 0 0 0 60px;
+  margin: 0 60px;
   padding: 12px;
   text-wrap: balance;
   border: var(--border);

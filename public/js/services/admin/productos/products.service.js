@@ -7,11 +7,10 @@ const products = []
 // #region functions
 export const loadCategorys = (data, categorys) => {
   data.forEach((element) => {
-    const category = element.data()
     categorys.innerHTML += `
-      <option value="${category.id}">${category.nombre}</option>
+      <option value="${element.id}">${element.nombre}</option>
     `
-    products.push({ id: category.id, productos: category.productos })
+    products.push({ id: element.id, productos: element.productos })
   })
 
   return products

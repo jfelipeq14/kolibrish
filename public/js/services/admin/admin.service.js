@@ -1,13 +1,13 @@
 // #region atributte
-import { pageAdmin } from './pageAdmin.js'
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
-import { auth } from '../../config/firebase.js'
+import { loadCategorys, loadProducts } from './productos/products.service.js'
+import { loadTableCategorias } from './categorias/category.service.js'
 import { pageCategory } from './categorias/pageCategory.js'
 import { pageProductos } from './productos/pageProducts.js'
-import { loadTableCategorias } from './categorias/services.category.js'
 // import { getAllData } from '../services.general.js'
-import { loadCategorys, loadProducts } from './productos/services.products.js'
 import { localData } from '../local/localData.js'
+import { auth } from '../../config/firebase.js'
+import { pageAdmin } from './pageAdmin.js'
 
 let btnCategorias
 let btnProductos
