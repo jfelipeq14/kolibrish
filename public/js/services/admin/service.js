@@ -6,6 +6,7 @@ import { auth } from '../../config/firebase.js'
 import { pageCategory } from './categorias/page.js'
 import { pageProductos } from './productos/page.js'
 import { loadTableCategorias } from './categorias/services.js'
+import { data } from '../general/local/data.js'
 
 let btnCategorias
 let btnProductos
@@ -13,8 +14,7 @@ let modules
 let logout
 let body
 let table
-
-const data = [{ nombre: 'nombre', img: 'url', descripcion: 'lo que sea' }]
+let categorias
 
 export const loadAdminPage = () => {
   const content = document.getElementById('body')
@@ -45,9 +45,19 @@ export const loadAdminPage = () => {
         loadTableCategorias(table)
       }
     })
+
     btnProductos.addEventListener('click', () => {
       const content = document.getElementById('content')
       content.innerHTML = pageProductos
+      if (content) {
+        categorias = document.getElementById('categorias')
+        data.forEach((data) => {
+          categorias.innerHTML += `
+            <option value="${data.id}">${data.nombre}</option>
+          `
+          //listProductos.push({ id: data.id, productos: data.productos })
+        })
+      }
     })
     body.classList.remove('bg-linear')
   }
