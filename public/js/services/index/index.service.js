@@ -83,7 +83,7 @@ const addButtons = async () => {
 }
 
 const setupProducts = async (id) => {
-  dataCategory = listProductos.find((producto) => producto.id === id)
+  dataCategory = listProductos.find((c) => c.id === id)
   if (dataCategory) {
     productosList.innerHTML = dataCategory.productos.map((producto) => {
       return `
