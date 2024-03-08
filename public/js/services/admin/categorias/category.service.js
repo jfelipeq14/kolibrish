@@ -18,19 +18,3 @@ export const loadTableCategorias = async (table) => {
     table.innerHTML += html
   })
 }
-const formCategory = document.getElementById('formCategory')
-formCategory.addEventListener('submit', async (e) => {
-  e.preventDefault()
-
-  try {
-    const dataCategory = {
-      id: crypto.randomUUID(),
-      nombre: formCategory.nombre,
-      productos: [],
-      habilitado: true
-
-    }
-  } catch (error) {
-    console.error(error)
-  }
-})

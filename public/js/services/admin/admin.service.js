@@ -8,6 +8,7 @@ import { pageProductos } from './productos/pageProducts.js'
 import { localData } from '../local/localData.js'
 import { auth } from '../../config/firebase.js'
 import { pageAdmin } from './pageAdmin.js'
+import { saveData } from '../services.general.js'
 
 let btnCategorias
 let btnProductos
@@ -19,6 +20,7 @@ let table
 const data = localData
 let products = []
 let dataModules
+let form
 
 export const loadAdminPage = async () => {
   const content = document.getElementById('body')
@@ -67,8 +69,27 @@ export const loadAdminPage = async () => {
       const content = document.getElementById('content')
       content.innerHTML = pageCategory
       if (content) {
+        form = document.getElementById('form')
         table = document.getElementById('table-content')
         loadTableCategorias(table)
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault()
+
+          try {
+            if (form.nombre.value !== '') {
+              const dataCategory = {
+                id: crypto.randomUUID(),
+                nombre: form.nombre.value,
+                productos: [],
+                habilitado: true
+
+              }
+              await saveData(dataCategory, 'categorias').then((data) => [console.log('Dato Guardado')])
+            }
+          } catch (error) {
+            console.error(error)
+          }
+        })
       }
     })
 
