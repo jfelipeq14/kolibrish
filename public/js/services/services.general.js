@@ -31,7 +31,6 @@ export const deleteData = (id, table) => deleteDoc(doc(db, table, id))
 
 export const getDataById = (id, table) => getDoc(doc(db, table, id))
 
-export const updateData = (id, newFields, table) =>
-  updateDoc(doc(db, table, id), newFields)
+export const updateData = (id, newFields, table) => updateDoc(doc(db, table, id), newFields)
 
 export const getAllData = (table) => getDocs(collection(db, table))

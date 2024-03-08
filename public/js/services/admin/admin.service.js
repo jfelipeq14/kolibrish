@@ -5,14 +5,10 @@ import { loadTableCategorias } from './categorias/category.service.js'
 import { pageCategory } from './categorias/pageCategory.js'
 import { pageProductos } from './productos/pageProducts.js'
 // import { getAllData } from '../services.general.js'
-import { localData } from '../local/localData.js'
+// import { localData } from '../local/localData.js'
 import { auth } from '../../config/firebase.js'
 import { pageAdmin } from './pageAdmin.js'
-
-import { getDataById } from '../services.general.js'
-
-import { saveData } from '../services.general.js'
-
+import { getAllData, saveData, updateData } from '../services.general.js'
 
 let btnCategorias
 let btnProductos
@@ -21,12 +17,25 @@ let modules
 let logout
 let body
 let table
-const data = localData
+let data
 let products = []
 let dataModules
 let form
+let info
+let edit = false
+const listCategory = []
+const dataCategory = {
+  id: crypto.randomUUID(),
+  nombre: '',
+  productos: [],
+  habilitado: true
+}
 
 export const loadAdminPage = async () => {
+  data = await getAllData('categorias')
+  data.forEach((category) => {
+    listCategory.push(category.data())
+  })
   const content = document.getElementById('body')
   content.innerHTML = pageAdmin
   if (content) {
@@ -60,7 +69,7 @@ export const loadAdminPage = async () => {
       `
     })
 
-    logout.addEventListener('click', async (e) => {
+    logout.addEventListener('click', async () => {
       try {
         await signOut(auth)
         location.reload()
@@ -73,49 +82,36 @@ export const loadAdminPage = async () => {
       const content = document.getElementById('content')
       content.innerHTML = pageCategory
       if (content) {
-        form = document.getElementById('form')
         table = document.getElementById('table-content')
+        form = document.getElementById('form')
         loadTableCategorias(table)
-
-        const btnsEdit = table.querySelectorAll('.btn-edit')
-        btnsEdit.forEach((btn) => {
-          btn.addEventListener('click', async (e) => {
-            try {
-              const doc = await getDataById(e.target.dataset.id)
-              const category = doc.data()
-              form.nombre.value = category.nombre
-              form.addEventListener('submit', () => {
-                const dataCategory = {
-                  nombre: form.nombre.value,
-                  productos: [],
-                  habilitado: true
-
-                }
-                updateData(category.id, dataCategory, 'categorias')
-              })
-            } catch (error) {
-              console.log(error)
-            }
-          })
+        table.addEventListener('click', (e) => {
+          try {
+            info = listCategory.find((category) => category.id === e.target.dataset.id)
+            form.nombre.value = info.nombre
+            edit = true
+          } catch (e) {
+            console.error(e)
+          }
+        })
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault()
-
+          dataCategory.nombre = form.nombre.value
           try {
-            if (form.nombre.value !== '') {
-              const dataCategory = {
-                id: crypto.randomUUID(),
-                nombre: form.nombre.value,
-                productos: [],
-                habilitado: true
-
-              }
-              await saveData(dataCategory, 'categorias').then((data) => [console.log('Dato Guardado')])
+            if (edit === true && form.nombre.value !== '' && info.id !== '') {
+              delete dataCategory.id
+              console.log(dataCategory)
+              await updateData(info.id, dataCategory, 'categorias').then((doc) => console.log(doc))
+              edit = false
+            } else if (edit === false && form.nombre.value !== '') {
+              await saveData(dataCategory, 'categorias')
+            } else {
+              console.log('nothing')
             }
-          } catch (error) {
-            console.error(error)
+          } catch (e) {
+            console.error(e)
           }
-
         })
       }
     })
