@@ -2,6 +2,7 @@ import { db } from '../config/firebase.js'
 import {
   collection,
   getDocs,
+  getDoc,
   addDoc,
   deleteDoc,
   doc,
@@ -28,7 +29,7 @@ export const saveData = (json, table) =>
 
 export const deleteData = (id, table) => deleteDoc(doc(db, table, id))
 
-// export const getDataById = (id, table) => getDoc(doc(db, table, id))
+export const getDataById = (id, table) => getDoc(doc(db, table, id))
 
 export const updateData = (id, newFields, table) =>
   updateDoc(doc(db, table, id), newFields)

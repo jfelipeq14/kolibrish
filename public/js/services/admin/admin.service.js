@@ -8,7 +8,11 @@ import { pageProductos } from './productos/pageProducts.js'
 import { localData } from '../local/localData.js'
 import { auth } from '../../config/firebase.js'
 import { pageAdmin } from './pageAdmin.js'
+
+import { getDataById } from '../services.general.js'
+
 import { saveData } from '../services.general.js'
+
 
 let btnCategorias
 let btnProductos
@@ -72,6 +76,28 @@ export const loadAdminPage = async () => {
         form = document.getElementById('form')
         table = document.getElementById('table-content')
         loadTableCategorias(table)
+
+        const btnsEdit = table.querySelectorAll('.btn-edit')
+        btnsEdit.forEach((btn) => {
+          btn.addEventListener('click', async (e) => {
+            try {
+              const doc = await getDataById(e.target.dataset.id)
+              const category = doc.data()
+              form.nombre.value = category.nombre
+              form.addEventListener('submit', () => {
+                const dataCategory = {
+                  nombre: form.nombre.value,
+                  productos: [],
+                  habilitado: true
+
+                }
+                updateData(category.id, dataCategory, 'categorias')
+              })
+            } catch (error) {
+              console.log(error)
+            }
+          })
+
         form.addEventListener('submit', async (e) => {
           e.preventDefault()
 
@@ -89,6 +115,7 @@ export const loadAdminPage = async () => {
           } catch (error) {
             console.error(error)
           }
+
         })
       }
     })
