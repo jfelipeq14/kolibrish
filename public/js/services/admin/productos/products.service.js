@@ -30,8 +30,8 @@ export const loadProducts = (id, products, table) => {
         <td>${data[i].descripcion}</td>
         <td>${data[i].habilitado}</td>
         <td class="d-flex">
-          <button class="btn-blue btn-icon">⚙</button>
-          <button class="btn-blue btn-icon">✖</button>
+          <button class="btn-edit btn-icon">⚙</button>
+          <button class="btn-delete btn-icon">✖</button>
         </td>
       </tr>
       `

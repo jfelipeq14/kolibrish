@@ -9,8 +9,8 @@ export const loadTableCategorias = async (table) => {
       <tr>
         <td>${category.nombre}</td>
         <td class="d-flex">
-          <button class="btn-blue btn-icon" data-id="${category.id}">⚙</button>
-          <button class="btn-blue btn-icon">✖</button>
+          <button class="btn-edit btn-icon" data-id="${element.id}" value="${category.nombre}">⚙</button>
+          <button class="btn-delete btn-icon">✖</button>
         </td>
       </tr>
       `

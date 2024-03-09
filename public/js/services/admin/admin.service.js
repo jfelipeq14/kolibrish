@@ -23,9 +23,10 @@ let dataModules
 let form
 let info
 let edit = false
+let id
 const listCategory = []
 const dataCategory = {
-  id: crypto.randomUUID(),
+  // id: crypto.randomUUID(),
   nombre: '',
   productos: [],
   habilitado: true
@@ -86,12 +87,15 @@ export const loadAdminPage = async () => {
         form = document.getElementById('form')
         loadTableCategorias(table)
         table.addEventListener('click', (e) => {
-          try {
-            info = listCategory.find((category) => category.id === e.target.dataset.id)
-            form.nombre.value = info.nombre
-            edit = true
-          } catch (e) {
-            console.error(e)
+          if (e) {
+            try {
+              info = listCategory.find((category) => category.nombre === e.target.value)
+              form.nombre.value = info.nombre
+              id = e.target.dataset.id
+              edit = true
+            } catch (e) {
+              console.error(e)
+            }
           }
         })
 
@@ -100,12 +104,12 @@ export const loadAdminPage = async () => {
           dataCategory.nombre = form.nombre.value
           try {
             if (edit === true && form.nombre.value !== '' && info.id !== '') {
-              delete dataCategory.id
-              console.log(dataCategory)
-              await updateData(info.id, dataCategory, 'categorias').then((doc) => console.log(doc))
+              await updateData(id, dataCategory, 'categorias').then(console.log('Registro actualizado'))
               edit = false
+              location.reload()
             } else if (edit === false && form.nombre.value !== '') {
-              await saveData(dataCategory, 'categorias')
+              await saveData(dataCategory, 'categorias').then(console.log('Registro guardado'))
+              location.reload()
             } else {
               console.log('nothing')
             }

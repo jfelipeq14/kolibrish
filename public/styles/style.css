@@ -2,6 +2,8 @@
   --blue: #24bae4;
   --purple: #364797;
   --fucsia: #a94f99;
+  --red: #943126;
+  --green: #1d8348;
   --radius: 6px;
   --border: 1px solid black;
   --shadow: 0 0 15px 4px #00000020;
@@ -160,6 +162,22 @@ button a:hover {
   align-items: center;
   justify-content: start;
 }
+.btn-save {
+  color: white;
+  background-color: var(--fucsia);
+}
+.btn-edit {
+  color: white;
+  background-color: var(--green);
+}
+.btn-delete {
+  color: white;
+  background-color: var(--red);
+}
+.btn-search {
+  color: white;
+  background-color: var(--purple);
+}
 .btn-blue {
   color: white;
   background-color: var(--blue);
@@ -182,8 +200,9 @@ button a:hover {
   color: white;
 }
 .btn-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
+  margin: 0 12px;
 }
 .btn-xs {
   width: 100px;
@@ -396,7 +415,7 @@ span {
   align-items: flex-end;
 }
 
-img{
+img {
   border-radius: var(--radius);
   -o-border-radius: var(--radius);
   -ms-border-radius: var(--radius);
@@ -405,11 +424,11 @@ img{
 }
 
 /* pagina de admin */
-picture img{
+picture img {
   width: 85px;
 }
 
-section#modules{
+section#modules {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
