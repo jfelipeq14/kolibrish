@@ -8,7 +8,6 @@ import '../auth/signinForm.js'
 const listProductos = []
 let categoriasList
 let productosList
-let dataCategory
 let hiddenPopup
 let signInForm
 let dialog
@@ -21,18 +20,14 @@ export const loadIndex = async () => {
   content.innerHTML += pageIndex
   if (content) {
     categoriasList = document.getElementById('categorias')
-    productosList = document.getElementById('productos')
+    productosList = document.querySelectorAll('.productos')
     hiddenPopup = document.getElementById('hiddenPopup')
     signInForm = document.getElementById('signInForm')
     dialog = document.getElementById('pop-up')
     login = document.getElementById('login')
     body = document.getElementById('body')
 
-    addButtons()
-
-    categoriasList.addEventListener('click', (e) => {
-      setupProducts(e.target.value)
-    })
+    addSections()
 
     login.addEventListener('click', () => {
       dialog.showModal()
@@ -71,21 +66,12 @@ export const loadIndex = async () => {
 
 // #region functions
 
-const addButtons = async () => {
+const addSections = async () => {
   const data = await getAllData('categorias')
   data.forEach((element) => {
     const category = element.data()
-    categoriasList.innerHTML += `
-      <button value="${category.id}" class="btn-sm btn-fucsia">${category.nombre}</button>
-      `
-    listProductos.push({ id: category.id, productos: category.productos })
-  })
-}
 
-const setupProducts = async (id) => {
-  dataCategory = listProductos.find((c) => c.id === id)
-  if (dataCategory) {
-    productosList.innerHTML = dataCategory.productos.map((producto) => {
+    const productos = category.productos.map((producto) => {
       return `
       <div class="cards">
         <img
@@ -96,8 +82,15 @@ const setupProducts = async (id) => {
         <p>${producto.descripcion}</p>
       </div>
       `
-      // <button class="btn-white btn-xs">COMPRAR</button>
     })
-  }
+
+    categoriasList.innerHTML += `
+        <h1>${category.nombre}</h1>
+        <article value="${element.id}" class="productos d-flex">
+          ${productos.join('')}
+        </article>
+      `
+    listProductos.push({ id: category.id, productos: category.productos })
+  })
 }
 // #endregion

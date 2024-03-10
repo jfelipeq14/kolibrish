@@ -1,15 +1,14 @@
 // #region atributte
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
 import { loadCategorys, loadProducts } from './productos/products.service.js'
+import { getAllData, saveData, updateData } from '../services.general.js'
 import { loadTableCategorias } from './categorias/category.service.js'
 import { pageCategory } from './categorias/pageCategory.js'
 import { pageProductos } from './productos/pageProducts.js'
-// import { getAllData } from '../services.general.js'
-// import { localData } from '../local/localData.js'
 import { auth } from '../../config/firebase.js'
 import { pageAdmin } from './pageAdmin.js'
-import { getAllData, saveData, updateData } from '../services.general.js'
 
+let products = []
 let btnCategorias
 let btnProductos
 let categorias
@@ -18,17 +17,33 @@ let logout
 let body
 let table
 let data
-let products = []
 let dataModules
 let form
 let info
-let edit = false
 let id
+let edit = false
 const listCategory = []
 const dataCategory = {
-  // id: crypto.randomUUID(),
   nombre: '',
-  productos: [],
+  productos: [{
+    nombre: 'Diferente',
+    descripcion: 'otra cosa',
+    sexo: 'f',
+    url: 'enlace',
+    habilitado: true
+  }, {
+    nombre: 'Tambien',
+    descripcion: 'otra cosa',
+    sexo: 'm',
+    url: 'enlace',
+    habilitado: true
+  }, {
+    nombre: 'Tambien',
+    descripcion: 'otra cosa',
+    sexo: 'u',
+    url: 'enlace',
+    habilitado: true
+  }],
   habilitado: true
 }
 
@@ -128,7 +143,6 @@ export const loadAdminPage = async () => {
         table = document.getElementById('table-content')
         // const categorys = await getAllData('categorias')
         products = loadCategorys(data, categorias)
-
         categorias.addEventListener('change', (e) => {
           loadProducts(e.target.value, products, table)
         })
