@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kolibrish</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
-  </head>
 
-  <body id="body">
-    <dialog id="pop-up">
-      <button id="hiddenPopup" class="btn-icon close btn-blue">X</button>
-      <h3>Iniciar sesión</h3>
-      <form id="signInForm">
-        <label>
-          <input
-            type="email"
-            id="login-email"
-            placeholder="kolibrishcompany@gmail.com"
-            required /></label
-        ><label class="password">
-          <input
-            type="password"
-            id="login-password"
-            placeholder="************"
-            required
-        /></label>
-        <div class="buttons">
-          <button type="submit" class="btn-sm btn-blue">Ingresar</button>
-        </div>
-      </form>
-    </dialog>
-  </body>
-  <script src="./js/main.js" type="module"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolibrish</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
+</head>
+
+<body id="body">
+
+  <dialog class="modal fade" id="popup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+    <section class="modal-dialog">
+      <article class="modal-content">
+        <header class="modal-header">
+          <h1 class="modal-title fs-5" id="popupLabel">Ingresar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </header>
+        <form id="signInForm" class="modal-body mx-auto text-center py-2 w-75">
+
+          <div class="form-floating bg-white">
+            <input type="email" id="login-email" class="form-control" placeholder="kolibrishcompany@gmail.com"
+              required />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" id="login-password" class="form-control" placeholder="************" required />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary mx-auto text-center">Ingresar</button>
+        </form>
+        <footer class="modal-footer border-top w-100">
+          <p class="text-center mx-auto">&copy; Kolibrish – 2024</p>
+        </footer>
+      </article>
+    </section>
+  </dialog>
+</body>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./js/main.js" type="module"></script>
+
 </html>

@@ -3,15 +3,10 @@ import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9
 import { auth } from '../../config/firebase.js'
 import { getAllData } from '../services.general.js'
 import { pageIndex } from './pageIndex.js'
-import '../auth/signinForm.js'
 
 const listProductos = []
 let categoriasList
-let productosList
-let hiddenPopup
 let signInForm
-let dialog
-let login
 let body
 // #endregion
 // #region events
@@ -20,22 +15,10 @@ export const loadIndex = async () => {
   content.innerHTML += pageIndex
   if (content) {
     categoriasList = document.getElementById('categorias')
-    productosList = document.querySelectorAll('.productos')
-    hiddenPopup = document.getElementById('hiddenPopup')
     signInForm = document.getElementById('signInForm')
-    dialog = document.getElementById('pop-up')
-    login = document.getElementById('login')
     body = document.getElementById('body')
 
     addSections()
-
-    login.addEventListener('click', () => {
-      dialog.showModal()
-    })
-
-    hiddenPopup.addEventListener('click', () => {
-      dialog.close()
-    })
 
     signInForm.addEventListener('submit', async (e) => {
       e.preventDefault()
@@ -50,6 +33,7 @@ export const loadIndex = async () => {
         )
         console.log(user)
       } catch (error) {
+        // mensajes de error
         if (error.code === 'auth/wrong-password') {
           console.log('Wrong password', 'error')
         } else if (error.code === 'auth/user-not-found') {
@@ -73,20 +57,20 @@ const addSections = async () => {
 
     const productos = category.productos.map((producto) => {
       return `
-      <div class="cards">
-        <img
-        src="${producto.url}"
-        alt="${producto.descripcion}"
-        />
-        <h3 class="title">${producto.nombre}</h3>
-        <p>${producto.descripcion}</p>
-      </div>
+        <div class="card m-2 rounded" style="width: 18rem;">
+          <img src="${producto.url}" class="card-img-top" alt="${producto.descripcion}">
+          <div class="card-body">
+            <h5 class="card-title">${producto.nombre}</h5>
+            <p class="card-text">${producto.descripcion}</p>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </div>
+        </div>
       `
     })
 
     categoriasList.innerHTML += `
-        <h1>${category.nombre}</h1>
-        <article value="${element.id}" class="productos d-flex">
+        <h1 class="text-center">${category.nombre}</h1>
+        <article value="${element.id}" class="productos d-flex row my-5 align-items-start justify-content-center">
           ${productos.join('')}
         </article>
       `

@@ -76,12 +76,17 @@ export const loadAdminPage = async () => {
     dataModules.forEach((doc) => {
       // const doc = element.data()
       modules.innerHTML += `
-      <article>
-      <picture class="d-block">
-      <img src="${doc.img}" alt="${doc.descripcion}" />
-      </picture>
-      <button class="btn-md" id="btn${doc.nombre}">${doc.nombre}</button>
-      </article>
+        <article class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <img src="${doc.img}" class="card-img-top" alt="${doc.descripcion}">
+            <div class="card-body">
+              <h5 class="card-title">${doc.nombre}</h5>
+              <p class="card-text">${doc.descripcion}</p>
+              <a href="#" class="btn btn-primary" id="btnCategorias">${doc.nombre}</a>
+            </div>
+          </div>
+        </article>
+  
       `
     })
 
