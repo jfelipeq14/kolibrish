@@ -8,6 +8,7 @@ import { pageProductos } from './productos/pageProducts.js'
 import { auth } from '../../config/firebase.js'
 import { pageAdmin } from './pageAdmin.js'
 
+let productos
 let products = []
 let btnCategorias
 let btnProductos
@@ -146,10 +147,24 @@ export const loadAdminPage = async () => {
       if (content) {
         categorias = document.getElementById('categorias')
         table = document.getElementById('table-content')
+        form = document.getElementById('form')
         // const categorys = await getAllData('categorias')
         products = loadCategorys(data, categorias)
         categorias.addEventListener('change', (e) => {
-          loadProducts(e.target.value, products, table)
+          productos = loadProducts(e.target.value, products, table)
+        })
+        table.addEventListener('click', (e) => {
+          try {
+            if (e) {
+              const encontrado = productos.find((elem) => elem.nombre === e.target.value)
+              console.log(encontrado)
+              form.nombre.value = encontrado.nombre
+              form.descripcion.value = encontrado.descripcion
+              form.sexo.value = encontrado.sexo
+            }
+          } catch (e) {
+            console.error(e)
+          }
         })
       }
     })
