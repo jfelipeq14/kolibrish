@@ -57,12 +57,12 @@ const addSections = async () => {
 
     const productos = category.productos.map((producto) => {
       return `
-        <div class="card m-2 rounded" style="width: 18rem;">
-          <img src="${producto.url}" class="card-img-top" alt="${producto.descripcion}">
-          <div class="card-body">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">${producto.descripcion}</p>
-            <a href="#" class="btn btn-primary">Comprar</a>
+        <div class="cards m-2 rounded text-white">
+          <img src="${producto.url}" alt="${producto.descripcion}">
+          <div>
+            <h5>${producto.nombre}</h5>
+            <p>${producto.descripcion}</p>
+            <a href="#" class="btn btn-sm btn-primary">Comprar</a>
           </div>
         </div>
       `

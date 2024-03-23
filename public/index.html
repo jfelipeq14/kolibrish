@@ -4,23 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
   <title>Kolibrish</title>
   <link rel="stylesheet" href="./styles/styles.css" />
-  <!-- <link rel="stylesheet" href="./styles/stylePersonal.css" /> -->
-  <link rel="shortcut icon" href="./assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="./styles/stylePersonal.css" />
 </head>
 
 <body id="body">
 
-  <dialog class="modal fade" id="popup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+  <dialog class="modal fade bg-blur" id="popup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
     <section class="modal-dialog">
-      <article class="modal-content">
+      <article class="modal-content bg-linear">
         <header class="modal-header">
           <h1 class="modal-title fs-5" id="popupLabel">Ingresar</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </header>
         <form id="signInForm" class="modal-body mx-auto text-center py-2 w-75">
-
           <div class="form-floating bg-white">
             <input type="email" id="login-email" class="form-control" placeholder="kolibrishcompany@gmail.com"
               required />

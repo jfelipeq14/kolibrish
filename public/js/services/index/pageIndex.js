@@ -1,8 +1,8 @@
 export const pageIndex = [
-  '<nav class="navbar navbar-expand-lg">',
+  '<nav class="navbar navbar-expand-lg navbar-dark">',
   '<div class="container-fluid">',
   '<picture>',
-  '<img src="./assets/logo.png" alt="" class="w-25 rounded" />',
+  '<img src="./assets/logo.png" alt="" class="rounded" width="80" />',
   '</picture>',
   '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"',
   'aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">',
