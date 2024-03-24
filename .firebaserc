@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "kolibrish-11d6a"
+    "default": "kolibrish-6cc75"
   },
   "targets": {
-    "kolibrish-11d6a": {
+    "kolibrish-6cc75": {
       "hosting": {
         "kolibrish": [
           "kolibrish-6cc75"

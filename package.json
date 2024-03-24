@@ -1,5 +1,5 @@
 {
-  "name": "pau-design",
+  "name": "kolibrish",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -10,15 +10,12 @@
   "keywords": [
     "Kolibrish"
   ],
-  "author": "jfelipeq14",
+  "author": "hermesianos",
   "license": "ISC",
   "devDependencies": {
     "standard": "17.1.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.3"
   }
 }
