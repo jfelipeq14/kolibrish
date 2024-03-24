@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "kolibrish",
     "public": "public",
     "ignore": [
       "firebase.json",

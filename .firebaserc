@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "kolibrish-11d6a"
-  }
+  },
+  "targets": {
+    "kolibrish-11d6a": {
+      "hosting": {
+        "kolibrish": [
+          "kolibrish-6cc75"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
