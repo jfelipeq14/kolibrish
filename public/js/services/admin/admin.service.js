@@ -20,31 +20,22 @@ let table
 let data
 let dataModules
 let form
+let index
+let product
 let info
 let id
 let edit = false
 const listCategory = []
 const dataCategory = {
   nombre: '',
-  productos: [{
-    nombre: 'Diferente',
-    descripcion: 'otra cosa',
-    sexo: 'f',
-    url: 'enlace',
-    habilitado: true
-  }, {
-    nombre: 'Tambien',
-    descripcion: 'otra cosa',
-    sexo: 'm',
-    url: 'enlace',
-    habilitado: true
-  }, {
-    nombre: 'Tambien',
-    descripcion: 'otra cosa',
-    sexo: 'u',
-    url: 'enlace',
-    habilitado: true
-  }],
+  productos: [],
+  habilitado: true
+}
+const dataProduct = {
+  nombre: '',
+  descripcion: '',
+  sexo: '',
+  url: '',
   habilitado: true
 }
 
@@ -156,11 +147,35 @@ export const loadAdminPage = async () => {
         table.addEventListener('click', (e) => {
           try {
             if (e) {
-              const encontrado = productos.find((elem) => elem.nombre === e.target.value)
-              console.log(encontrado)
-              form.nombre.value = encontrado.nombre
-              form.descripcion.value = encontrado.descripcion
-              form.sexo.value = encontrado.sexo
+              index = productos.findIndex((element) => element.nombre === e.target.value)
+
+              product = productos.find((element) => element.nombre === e.target.value)
+
+              form.nombre.value = product.nombre
+              form.descripcion.value = product.descripcion
+              form.sexo.value = product.sexo
+              form.url.value = product.url
+              form.habilitado.checked = product.habilitado
+              id = e.target.dataset.id
+              edit = true
+            }
+          } catch (e) {
+            console.error(e)
+          }
+        })
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault()
+          dataProduct.nombre = form.categorias.value
+          try {
+            if (edit === true && form && index) {
+              await updateProduct(index, dataProduct, productos)
+              edit = false
+              location.reload()
+            } else if (edit === false && form.nombre.value !== '') {
+              await saveData(dataCategory, 'categorias').then(console.log('Registro guardado'))
+              location.reload()
+            } else {
+              console.log('nothing')
             }
           } catch (e) {
             console.error(e)
@@ -168,6 +183,14 @@ export const loadAdminPage = async () => {
         })
       }
     })
+
+    function updateProduct (index, object, productos) {
+      if (index >= 0 && index < productos.length) {
+        productos[index] = object
+      } else {
+        throw new Error('Index out of bounds')
+      }
+    }
   }
 }
 

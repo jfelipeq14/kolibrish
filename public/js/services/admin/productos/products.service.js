@@ -42,7 +42,6 @@ export const loadProducts = (id, products, table) => {
         `
       }
     }
-
     return listProducts
   }
 }
